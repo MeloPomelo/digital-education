@@ -29,7 +29,6 @@ def get_db():
 app = FastAPI()
 app.include_router(media_router)
 app.include_router(space_router)
-app.include_router(test_router)
 
 
 @app.post("/user/", response_model=SchemaUser)
