@@ -1,6 +1,8 @@
 from uuid import uuid4, UUID
-from typing import Union
+from typing import Union, List
 from pydantic import BaseModel, Field
+
+from app.schemas.space_schema import AssociationSpaces
 
 
 class Token(BaseModel):
@@ -26,6 +28,7 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: UUID = Field(default_factory=uuid4)
     hashed_password: str
+    spaces: List[AssociationSpaces] = []
 
     class Config:
         orm_mode = True
