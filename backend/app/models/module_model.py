@@ -14,6 +14,3 @@ class Module(Base):
 
     text_blocks = relationship("TextMaterial", back_populates="module")
     video_blocks = relationship("VideoMaterial", back_populates="module")
-
-    def __repr__(self):
-        return f"{self.id} | {self.title} | {self.space_id}"

@@ -3,7 +3,6 @@ from pydantic import BaseModel
 from app.schemas.block_schema import TextMaterial, Video
 
 
-
 class ModuleBase(BaseModel):
     title: str
 
