@@ -10,6 +10,7 @@ from dotenv import load_dotenv
 from app.models.user_model import User
 from app.schemas import user_schema as user_schemas
 from app.crud import user_crud as crud
+from app.domains.role import Role
 
 from app.models.database import SessionLocal
 
@@ -33,12 +34,19 @@ def get_db():
         db.close()
 
 
-@user_router.post("/registration/", response_model=user_schemas.User)
+@user_router.post("/registration", response_model=user_schemas.User)
 async def user_registration(user: user_schemas.UserCreate, db: Session = Depends(get_db)):
-    return crud.user_registration(db=db, user=user)
+    exist_user = crud.get_user(db=db, username=user.username)
+    if exist_user:
+        raise HTTPException(
+            status_code=status.HTTP_409_CONFLICT,
+            detail="This username already exist"
+        )
+
+    return crud.create_user(db=db, user=user)
 
 
-@user_router.post("/token", response_model=user_schemas.Token)
+@user_router.post("/login", response_model=user_schemas.Token)
 async def login_for_access_token(db: Session = Depends(get_db), form_data: OAuth2PasswordRequestForm = Depends()):
     user = crud.authenticate_user(db, form_data.username, form_data.password)
     if not user:
@@ -54,6 +62,6 @@ async def login_for_access_token(db: Session = Depends(get_db), form_data: OAuth
     return {"access_token": access_token, "token_type": "bearer"}
 
 
-@user_router.get("/me/", response_model=user_schemas.User)
+@user_router.get("/me", response_model=user_schemas.User)
 async def read_users_me(current_user: User = Depends(crud.get_current_user)):
     return current_user
