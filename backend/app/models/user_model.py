@@ -1,9 +1,10 @@
 import uuid
-from sqlalchemy import Column, String
+from sqlalchemy import Column, String, Enum
 from sqlalchemy.dialects.postgresql import UUID
-
-from app.models.database import Base
 from sqlalchemy.orm import relationship
+
+from app.domains.role import Role
+from app.models.database import Base
 
 
 class User(Base):
@@ -14,8 +15,5 @@ class User(Base):
     hashed_password = Column(String)
     first_name = Column(String)
     last_name = Column(String)
-    # disabled = Column(BOOLEAN)
+    role = Column(Enum(Role))
     spaces = relationship("Association", back_populates="user")
-
-    # def __repr__(self):
-    #     return f"{self.id} | {self.first_name} | {self.last_name} | {self.hashed_password}"

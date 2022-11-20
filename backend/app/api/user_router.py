@@ -35,10 +35,10 @@ def get_db():
 
 @user_router.post("/registration/", response_model=user_schemas.User)
 async def user_registration(user: user_schemas.UserCreate, db: Session = Depends(get_db)):
-    return crud.user_registration(db=db, user=user)
+    return crud.create_user(db=db, user=user)
 
 
-@user_router.post("/token", response_model=user_schemas.Token)
+@user_router.post("/login", response_model=user_schemas.Token)
 async def login_for_access_token(db: Session = Depends(get_db), form_data: OAuth2PasswordRequestForm = Depends()):
     user = crud.authenticate_user(db, form_data.username, form_data.password)
     if not user:
