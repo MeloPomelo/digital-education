@@ -1,7 +1,11 @@
 from sqlalchemy.orm import Session
-from app.schemas.module_schema import ModuleCreate as SchemaModuleCreate
+
 from app.models.module_model import Module as ModelModule
-from app.models.blocks_models import TextMaterial, VideoMaterial
+from app.models.blocks_models import TextMaterial as ModelTextMaterial
+from app.models.blocks_models import VideoMaterial as ModelVideoMaterial
+
+from app.schemas.module_schema import ModuleCreate as SchemaModuleCreate
+
 from .block_crud import delete_text_material, delete_video_material
 
 
@@ -18,9 +22,9 @@ def get_module(db: Session, module_id: int):
 
 
 def delete_module(db: Session, module_id: int):
-    for i in db.query(TextMaterial).filter(TextMaterial.module_id == module_id):
+    for i in db.query(ModelTextMaterial).filter(ModelTextMaterial.module_id == module_id):
         delete_text_material(db, i.id)
-    for i in db.query(VideoMaterial).filter(VideoMaterial.module_id == module_id):
+    for i in db.query(ModelVideoMaterial).filter(ModelVideoMaterial.module_id == module_id):
         delete_video_material(db, i.id)
     db.query(ModelModule).filter(ModelModule.id == module_id).delete()
     db.commit()
