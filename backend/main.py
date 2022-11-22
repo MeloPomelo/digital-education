@@ -8,6 +8,7 @@ from app.api.space_router import space_router
 from app.api.test_router import test_router
 from app.api.user_router import user_router
 
+
 Base.metadata.create_all(bind=engine)
 
 

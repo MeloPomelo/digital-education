@@ -1,37 +1,23 @@
-import os
-
 from datetime import timedelta
 
 from fastapi import APIRouter, Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordRequestForm
 from sqlalchemy.orm import Session
-from dotenv import load_dotenv
+
+from config import settings
+from app.api.dependencies.db import get_db
 
 from app.models.user_model import User
 from app.schemas import user_schema as user_schemas
 from app.crud import user_crud as crud
-from app.domains.role import Role
-
-from app.models.database import SessionLocal
 
 
-BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-load_dotenv(os.path.join(BASE_DIR, ".env"))
-
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ["ACCESS_TOKEN_EXPIRE_MINUTES"])
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 user_router = APIRouter(
     prefix='',
     tags=['users'],
 )
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @user_router.post("/registration", response_model=user_schemas.User)

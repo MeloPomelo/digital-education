@@ -1,5 +1,3 @@
-import os
-
 from datetime import datetime, timedelta
 from typing import Union
 
@@ -8,32 +6,22 @@ from jose import JWTError, jwt
 from passlib.context import CryptContext
 from fastapi import Depends, HTTPException, status
 from fastapi.security import OAuth2PasswordBearer
-from dotenv import load_dotenv
+
+from config import settings
+from app.api.dependencies.db import get_db
 
 from app.models.user_model import User
 from app.domains.role import Role
 from app.schemas import user_schema as schemas
-from app.models.database import SessionLocal
 
 
-BASE_DIR = os.path.abspath(os.path.dirname(os.path.dirname(os.path.dirname(__file__))))
-load_dotenv(os.path.join(BASE_DIR, ".env"))
-
-SECRET_KEY = os.environ["SECRET_KEY"]
-ALGORITHM = os.environ["ALGORITHM"]
-ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ["ACCESS_TOKEN_EXPIRE_MINUTES"])
+SECRET_KEY = settings.SECRET_KEY
+ALGORITHM = settings.ALGORITHM
+ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
 oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 def verify_password(plain_password, hashed_password):
