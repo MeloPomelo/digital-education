@@ -7,7 +7,7 @@ class BlockBase(BaseModel):
     description: str
 
 
-class TextMaterialCreate(BlockBase):
+class SchemaTextMaterialCreate(BlockBase):
     text: str
 
 
@@ -19,7 +19,7 @@ class TextMaterial(BlockBase):
         orm_mode = True
 
 
-class VideoCreate(BlockBase):
+class SchemaVideoCreate(BlockBase):
     url: str
 
 

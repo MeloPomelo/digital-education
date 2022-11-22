@@ -1,7 +1,10 @@
 from sqlalchemy.orm import Session
-from app.schemas.space_schema import SpaceCreate as SchemaSpaceCreate
+
 from app.models.space_model import Space as ModelSpace
-from app.models import space_model, module_model
+from app.models.space_model import Association as ModelAssociation
+from app.models.module_model import Module as ModelModule
+
+from app.schemas.space_schema import SpaceCreate as SchemaSpaceCreate
 from .module_crud import delete_module
 
 
@@ -20,8 +23,8 @@ def get_space(db: Session, space_id: int):
 
 
 def delete_space(db: Session, space_id: int):
-    for i in db.query(module_model.Module).filter(module_model.Module.space_id == space_id):
+    for i in db.query(ModelModule).filter(ModelModule.space_id == space_id):
         delete_module(db, i.id)
-    db.query(space_model.Association).filter(space_model.Association.space_id == space_id).delete()
+    db.query(ModelAssociation).filter(ModelAssociation.space_id == space_id).delete()
     db.query(ModelSpace).filter(ModelSpace.id == space_id).delete()
     db.commit()
