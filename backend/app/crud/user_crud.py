@@ -11,6 +11,7 @@ from fastapi.security import OAuth2PasswordBearer
 from dotenv import load_dotenv
 
 from app.models.user_model import User
+from app.domains.role import Role
 from app.schemas import user_schema as schemas
 from app.models.database import SessionLocal
 
@@ -24,7 +25,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = int(os.environ["ACCESS_TOKEN_EXPIRE_MINUTES"])
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="token")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
 
 
 def get_db():
@@ -67,10 +68,14 @@ def create_access_token(data: dict, expires_delta: Union[timedelta, None] = None
     return encoded_jwt
 
 
-def user_registration(db: Session, user: schemas.UserCreate):
+def create_user(db: Session, user: schemas.UserCreate):
     hashed_password = get_password_hash(user.password)
     db_user = User(
-        username=user.username, hashed_password=hashed_password, first_name=user.first_name, last_name=user.last_name
+        username=user.username,
+        hashed_password=hashed_password,
+        first_name=user.first_name,
+        last_name=user.last_name,
+        role=Role(user.role)
     )
     db.add(db_user)
     db.commit()

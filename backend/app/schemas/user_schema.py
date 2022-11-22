@@ -1,8 +1,9 @@
 from uuid import uuid4, UUID
-from typing import Union, List
+from typing import Union, List, Optional
 from pydantic import BaseModel, Field
 
 from app.schemas.space_schema import AssociationSpaces
+from app.models.user_model import Role
 
 
 class Token(BaseModel):
@@ -18,6 +19,7 @@ class UserBase(BaseModel):
     username: str
     first_name: str
     last_name: str
+    role: Optional[Role]
     # disabled: Union[bool, None] = None
 
 
