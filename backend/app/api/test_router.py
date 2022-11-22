@@ -1,18 +1,13 @@
 from fastapi import APIRouter, Depends, HTTPException
 
-from app.models.database import SessionLocal
+from app.api.dependencies.auth_check import AuthCheck
+from app.api.dependencies.db import get_db
+from app.domains.role import Role
 
 
 test_router = APIRouter(
     prefix='/test',
     tags=['test'],
+    dependencies=[Depends(AuthCheck('All'))]
 )
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 

@@ -1,23 +1,17 @@
 from fastapi import Depends, HTTPException
-from .space_router import space_router
+from sqlalchemy.orm import Session
 
-from app.models.database import SessionLocal
+from app.api.dependencies.auth_check import AuthCheck
+from app.api.dependencies.db import get_db
+from app.domains.role import Role
+
+from .space_router import space_router
 
 from app.schemas.block_schema import SchemaTextMaterialCreate, SchemaVideoCreate
 from app.schemas.block_schema import Video as SchemaVideo
 from app.schemas.block_schema import TextMaterial as SchemaTextMaterial
 
 from app.crud import block_crud
-
-from sqlalchemy.orm import Session
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @space_router.post("/space_{space_id}/module/create_text_material", response_model=SchemaTextMaterial)

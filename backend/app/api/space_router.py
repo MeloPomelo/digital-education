@@ -1,5 +1,10 @@
 from fastapi import APIRouter, Depends, HTTPException
-from app.models.database import SessionLocal
+from sqlalchemy.orm import Session
+
+from app.api.dependencies.auth_check import AuthCheck
+from app.api.dependencies.db import get_db
+from app.domains.role import Role
+
 from app.models.space_model import Space
 from app.models.space_model import Association
 
@@ -7,22 +12,14 @@ from app.schemas.space_schema import Space as SchemaSpace
 from app.schemas.space_schema import SpaceCreate as SchemaSpaceCreate
 from app.schemas.space_schema import Association as SchemaAssociation
 
-from sqlalchemy.orm import Session
-
 from app.crud import space_crud
+
 
 space_router = APIRouter(
     prefix='/space',
     tags=['space'],
+    dependencies=[Depends(AuthCheck('All'))]
 )
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @space_router.post("/", response_model=SchemaSpace)

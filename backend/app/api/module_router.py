@@ -1,23 +1,17 @@
 from fastapi import Depends, HTTPException
+from sqlalchemy.orm import Session
+
+from app.api.dependencies.auth_check import AuthCheck
+from app.api.dependencies.db import get_db
+from app.domains.role import Role
+
 from .space_router import space_router
 
-from app.models.database import SessionLocal
 from app.models.module_model import Module
-
 from app.schemas.module_schema import Module as SchemaModule
 from app.schemas.module_schema import ModuleCreate as SchemaModuleCreate
 
 from app.crud import module_crud
-
-from sqlalchemy.orm import Session
-
-
-def get_db():
-    db = SessionLocal()
-    try:
-        yield db
-    finally:
-        db.close()
 
 
 @space_router.post("/space_{space_id}/module/", response_model=SchemaModule)
