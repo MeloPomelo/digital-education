@@ -3,7 +3,7 @@ from fastapi import FastAPI
 
 from app.models.database import Base, engine
 
-from app.api.media_router import media_router
+from app.api.homework_router import media_router
 from app.api.space_router import space_router
 from app.api.test_router import test_router
 from app.api.user_router import user_router

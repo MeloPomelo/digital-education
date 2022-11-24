@@ -16,10 +16,6 @@ class TextMaterial(Base):
     module = relationship("Module", back_populates="text_blocks")
 
 
-    # def __repr__(self):
-    #     return f"{self.id} | {self.title} | {self.description} | {self.text} | {self.module_id}"
-
-
 class VideoMaterial(Base):
     __tablename__ = "video_material"
 
@@ -30,7 +26,3 @@ class VideoMaterial(Base):
     module_id = Column(Integer, ForeignKey("modules.id"))
 
     module = relationship("Module", back_populates="video_blocks")
-
-
-    # def __repr__(self):
-    #     return f"{self.id} | {self.title} | {self.description} | {self.url} | {self.module_id}"
