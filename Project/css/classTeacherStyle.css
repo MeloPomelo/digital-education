@@ -185,6 +185,30 @@ body {
   background-color: var(--basic-student-hover);
 }
 
+.cancelGrade {
+  width: 32px;
+  font-size: 28px;
+  background-color: var(--basic-student-color);
+  border-radius: 50%;
+  text-align: center;
+  color: white;
+  padding: 2px 7px 5px 7px;
+  transition: 0.5s;
+  cursor: pointer;
+  margin-top: 5px;
+}
+
+.gradeGrid {
+  display: grid;
+  grid-template-columns: 1fr 45px;
+  row-gap: 300px;
+}
+
+.cancelGrade:hover,
+.cancelGrade:active {
+  background-color: var(--basic-student-hover);
+}
+
 .toBoard {
   margin: 0 auto 40px auto;
   padding: 10px;

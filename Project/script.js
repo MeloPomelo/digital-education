@@ -21,6 +21,7 @@ choiceFive1.onclick = function () {
   choiceFour1.classList.add('turnedOff');
   choiceThree1.classList.add('turnedOff');
   choiceTwo1.classList.add('turnedOff');
+  cancelChoice1.classList.remove('turnedOff');
 };
 
 choiceFour1.onclick = function () {
@@ -30,6 +31,7 @@ choiceFour1.onclick = function () {
   choiceFour1.classList.add('turnedOff');
   choiceThree1.classList.add('turnedOff');
   choiceTwo1.classList.add('turnedOff');
+  cancelChoice1.classList.remove('turnedOff');
 };
 
 choiceThree1.onclick = function () {
@@ -39,6 +41,7 @@ choiceThree1.onclick = function () {
   choiceFour1.classList.add('turnedOff');
   choiceThree1.classList.add('turnedOff');
   choiceTwo1.classList.add('turnedOff');
+  cancelChoice1.classList.remove('turnedOff');
 };
 
 choiceTwo1.onclick = function () {
@@ -48,7 +51,28 @@ choiceTwo1.onclick = function () {
   choiceFour1.classList.add('turnedOff');
   choiceThree1.classList.add('turnedOff');
   choiceTwo1.classList.add('turnedOff');
+  cancelChoice1.classList.remove('turnedOff');
 };
+
+/*Отмена выбора*/
+
+let cancelChoice1 = document.getElementById('cancel1');
+
+cancelChoice1.onclick = function () {
+  cancelChoice1.classList.add('turnedOff');
+  gradeLabel1.classList.remove('turnedOff');
+  choiceFive1.classList.remove('turnedOff');
+  choiceFour1.classList.remove('turnedOff');
+  choiceThree1.classList.remove('turnedOff');
+  choiceTwo1.classList.remove('turnedOff');
+
+  five1.classList.add('turnedOff');
+  four1.classList.add('turnedOff');
+  three1.classList.add('turnedOff');
+  two1.classList.add('turnedOff');
+}
+
+
 
 
 /*Второй блок*/
@@ -74,6 +98,7 @@ choiceFive2.onclick = function () {
   choiceFour2.classList.add('turnedOff');
   choiceThree2.classList.add('turnedOff');
   choiceTwo2.classList.add('turnedOff');
+  cancelChoice2.classList.remove('turnedOff');
 };
 
 choiceFour2.onclick = function () {
@@ -83,6 +108,7 @@ choiceFour2.onclick = function () {
   choiceFour2.classList.add('turnedOff');
   choiceThree2.classList.add('turnedOff');
   choiceTwo2.classList.add('turnedOff');
+  cancelChoice2.classList.remove('turnedOff');
 };
 
 choiceThree2.onclick = function () {
@@ -92,6 +118,7 @@ choiceThree2.onclick = function () {
   choiceFour2.classList.add('turnedOff');
   choiceThree2.classList.add('turnedOff');
   choiceTwo2.classList.add('turnedOff');
+  cancelChoice2.classList.remove('turnedOff');
 };
 
 choiceTwo2.onclick = function () {
@@ -101,7 +128,27 @@ choiceTwo2.onclick = function () {
   choiceFour2.classList.add('turnedOff');
   choiceThree2.classList.add('turnedOff');
   choiceTwo2.classList.add('turnedOff');
+  cancelChoice2.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice2 = document.getElementById('cancel2');
+
+cancelChoice2.onclick = function () {
+  cancelChoice2.classList.add('turnedOff');
+  gradeLabel2.classList.remove('turnedOff');
+  choiceFive2.classList.remove('turnedOff');
+  choiceFour2.classList.remove('turnedOff');
+  choiceThree2.classList.remove('turnedOff');
+  choiceTwo2.classList.remove('turnedOff');
+
+  five2.classList.add('turnedOff');
+  four2.classList.add('turnedOff');
+  three2.classList.add('turnedOff');
+  two2.classList.add('turnedOff');
+}
 
 
 /*Третий блок*/
@@ -127,6 +174,7 @@ choiceFive3.onclick = function () {
   choiceFour3.classList.add('turnedOff');
   choiceThree3.classList.add('turnedOff');
   choiceTwo3.classList.add('turnedOff');
+  cancelChoice3.classList.remove('turnedOff');
 };
 
 choiceFour3.onclick = function () {
@@ -136,6 +184,7 @@ choiceFour3.onclick = function () {
   choiceFour3.classList.add('turnedOff');
   choiceThree3.classList.add('turnedOff');
   choiceTwo3.classList.add('turnedOff');
+  cancelChoice3.classList.remove('turnedOff');
 };
 
 choiceThree3.onclick = function () {
@@ -145,6 +194,7 @@ choiceThree3.onclick = function () {
   choiceFour3.classList.add('turnedOff');
   choiceThree3.classList.add('turnedOff');
   choiceTwo3.classList.add('turnedOff');
+  cancelChoice3.classList.remove('turnedOff');
 };
 
 choiceTwo3.onclick = function () {
@@ -154,8 +204,27 @@ choiceTwo3.onclick = function () {
   choiceFour3.classList.add('turnedOff');
   choiceThree3.classList.add('turnedOff');
   choiceTwo3.classList.add('turnedOff');
+  cancelChoice3.classList.remove('turnedOff');
 };
 
+
+/*Отмена выбора*/
+
+let cancelChoice3 = document.getElementById('cancel3');
+
+cancelChoice3.onclick = function () {
+  cancelChoice3.classList.add('turnedOff');
+  gradeLabel3.classList.remove('turnedOff');
+  choiceFive3.classList.remove('turnedOff');
+  choiceFour3.classList.remove('turnedOff');
+  choiceThree3.classList.remove('turnedOff');
+  choiceTwo3.classList.remove('turnedOff');
+
+  five3.classList.add('turnedOff');
+  four3.classList.add('turnedOff');
+  three3.classList.add('turnedOff');
+  two3.classList.add('turnedOff');
+}
 
 
 /*Четвёртый блок*/
@@ -181,6 +250,7 @@ choiceFive4.onclick = function () {
   choiceFour4.classList.add('turnedOff');
   choiceThree4.classList.add('turnedOff');
   choiceTwo4.classList.add('turnedOff');
+  cancelChoice4.classList.remove('turnedOff');
 };
 
 choiceFour4.onclick = function () {
@@ -190,6 +260,7 @@ choiceFour4.onclick = function () {
   choiceFour4.classList.add('turnedOff');
   choiceThree4.classList.add('turnedOff');
   choiceTwo4.classList.add('turnedOff');
+  cancelChoice4.classList.remove('turnedOff');
 };
 
 choiceThree4.onclick = function () {
@@ -199,6 +270,7 @@ choiceThree4.onclick = function () {
   choiceFour4.classList.add('turnedOff');
   choiceThree4.classList.add('turnedOff');
   choiceTwo4.classList.add('turnedOff');
+  cancelChoice4.classList.remove('turnedOff');
 };
 
 choiceTwo4.onclick = function () {
@@ -208,7 +280,27 @@ choiceTwo4.onclick = function () {
   choiceFour4.classList.add('turnedOff');
   choiceThree4.classList.add('turnedOff');
   choiceTwo4.classList.add('turnedOff');
+  cancelChoice4.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice4 = document.getElementById('cancel4');
+
+cancelChoice4.onclick = function () {
+  cancelChoice4.classList.add('turnedOff');
+  gradeLabel4.classList.remove('turnedOff');
+  choiceFive4.classList.remove('turnedOff');
+  choiceFour4.classList.remove('turnedOff');
+  choiceThree4.classList.remove('turnedOff');
+  choiceTwo4.classList.remove('turnedOff');
+
+  five4.classList.add('turnedOff');
+  four4.classList.add('turnedOff');
+  three4.classList.add('turnedOff');
+  two4.classList.add('turnedOff');
+}
 
 
 
@@ -235,6 +327,7 @@ choiceFive5.onclick = function () {
   choiceFour5.classList.add('turnedOff');
   choiceThree5.classList.add('turnedOff');
   choiceTwo5.classList.add('turnedOff');
+  cancelChoice5.classList.remove('turnedOff');
 };
 
 choiceFour5.onclick = function () {
@@ -244,6 +337,7 @@ choiceFour5.onclick = function () {
   choiceFour5.classList.add('turnedOff');
   choiceThree5.classList.add('turnedOff');
   choiceTwo5.classList.add('turnedOff');
+  cancelChoice5.classList.remove('turnedOff');
 };
 
 choiceThree5.onclick = function () {
@@ -253,6 +347,7 @@ choiceThree5.onclick = function () {
   choiceFour5.classList.add('turnedOff');
   choiceThree5.classList.add('turnedOff');
   choiceTwo5.classList.add('turnedOff');
+  cancelChoice5.classList.remove('turnedOff');
 };
 
 choiceTwo5.onclick = function () {
@@ -262,7 +357,27 @@ choiceTwo5.onclick = function () {
   choiceFour5.classList.add('turnedOff');
   choiceThree5.classList.add('turnedOff');
   choiceTwo5.classList.add('turnedOff');
+  cancelChoice5.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice5 = document.getElementById('cancel5');
+
+cancelChoice5.onclick = function () {
+  cancelChoice5.classList.add('turnedOff');
+  gradeLabel5.classList.remove('turnedOff');
+  choiceFive5.classList.remove('turnedOff');
+  choiceFour5.classList.remove('turnedOff');
+  choiceThree5.classList.remove('turnedOff');
+  choiceTwo5.classList.remove('turnedOff');
+
+  five5.classList.add('turnedOff');
+  four5.classList.add('turnedOff');
+  three5.classList.add('turnedOff');
+  two5.classList.add('turnedOff');
+}
 
 
 
@@ -289,6 +404,7 @@ choiceFive6.onclick = function () {
   choiceFour6.classList.add('turnedOff');
   choiceThree6.classList.add('turnedOff');
   choiceTwo6.classList.add('turnedOff');
+  cancelChoice6.classList.remove('turnedOff');
 };
 
 choiceFour6.onclick = function () {
@@ -298,6 +414,7 @@ choiceFour6.onclick = function () {
   choiceFour6.classList.add('turnedOff');
   choiceThree6.classList.add('turnedOff');
   choiceTwo6.classList.add('turnedOff');
+  cancelChoice6.classList.remove('turnedOff');
 };
 
 choiceThree6.onclick = function () {
@@ -307,6 +424,7 @@ choiceThree6.onclick = function () {
   choiceFour6.classList.add('turnedOff');
   choiceThree6.classList.add('turnedOff');
   choiceTwo6.classList.add('turnedOff');
+  cancelChoice6.classList.remove('turnedOff');
 };
 
 choiceTwo6.onclick = function () {
@@ -316,7 +434,28 @@ choiceTwo6.onclick = function () {
   choiceFour6.classList.add('turnedOff');
   choiceThree6.classList.add('turnedOff');
   choiceTwo6.classList.add('turnedOff');
+  cancelChoice6.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice6 = document.getElementById('cancel6');
+
+cancelChoice6.onclick = function () {
+  cancelChoice6.classList.add('turnedOff');
+  gradeLabel6.classList.remove('turnedOff');
+  choiceFive6.classList.remove('turnedOff');
+  choiceFour6.classList.remove('turnedOff');
+  choiceThree6.classList.remove('turnedOff');
+  choiceTwo6.classList.remove('turnedOff');
+
+  five6.classList.add('turnedOff');
+  four6.classList.add('turnedOff');
+  three6.classList.add('turnedOff');
+  two6.classList.add('turnedOff');
+}
+
 
 
 /*Седьмой блок*/
@@ -342,6 +481,7 @@ choiceFive7.onclick = function () {
   choiceFour7.classList.add('turnedOff');
   choiceThree7.classList.add('turnedOff');
   choiceTwo7.classList.add('turnedOff');
+  cancelChoice7.classList.remove('turnedOff');
 };
 
 choiceFour7.onclick = function () {
@@ -351,6 +491,7 @@ choiceFour7.onclick = function () {
   choiceFour7.classList.add('turnedOff');
   choiceThree7.classList.add('turnedOff');
   choiceTwo7.classList.add('turnedOff');
+  cancelChoice7.classList.remove('turnedOff');
 };
 
 choiceThree7.onclick = function () {
@@ -360,6 +501,7 @@ choiceThree7.onclick = function () {
   choiceFour7.classList.add('turnedOff');
   choiceThree7.classList.add('turnedOff');
   choiceTwo7.classList.add('turnedOff');
+  cancelChoice7.classList.remove('turnedOff');
 };
 
 choiceTwo7.onclick = function () {
@@ -369,7 +511,27 @@ choiceTwo7.onclick = function () {
   choiceFour7.classList.add('turnedOff');
   choiceThree7.classList.add('turnedOff');
   choiceTwo7.classList.add('turnedOff');
+  cancelChoice7.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice7 = document.getElementById('cancel7');
+
+cancelChoice7.onclick = function () {
+  cancelChoice7.classList.add('turnedOff');
+  gradeLabel7.classList.remove('turnedOff');
+  choiceFive7.classList.remove('turnedOff');
+  choiceFour7.classList.remove('turnedOff');
+  choiceThree7.classList.remove('turnedOff');
+  choiceTwo7.classList.remove('turnedOff');
+
+  five7.classList.add('turnedOff');
+  four7.classList.add('turnedOff');
+  three7.classList.add('turnedOff');
+  two7.classList.add('turnedOff');
+}
 
 
 
@@ -396,6 +558,7 @@ choiceFive8.onclick = function () {
   choiceFour8.classList.add('turnedOff');
   choiceThree8.classList.add('turnedOff');
   choiceTwo8.classList.add('turnedOff');
+  cancelChoice8.classList.remove('turnedOff');
 };
 
 choiceFour8.onclick = function () {
@@ -405,6 +568,7 @@ choiceFour8.onclick = function () {
   choiceFour8.classList.add('turnedOff');
   choiceThree8.classList.add('turnedOff');
   choiceTwo8.classList.add('turnedOff');
+  cancelChoice8.classList.remove('turnedOff');
 };
 
 choiceThree8.onclick = function () {
@@ -414,6 +578,7 @@ choiceThree8.onclick = function () {
   choiceFour8.classList.add('turnedOff');
   choiceThree8.classList.add('turnedOff');
   choiceTwo8.classList.add('turnedOff');
+  cancelChoice8.classList.remove('turnedOff');
 };
 
 choiceTwo8.onclick = function () {
@@ -423,8 +588,27 @@ choiceTwo8.onclick = function () {
   choiceFour8.classList.add('turnedOff');
   choiceThree8.classList.add('turnedOff');
   choiceTwo8.classList.add('turnedOff');
+  cancelChoice8.classList.remove('turnedOff');
 };
 
+
+/*Отмена выбора*/
+
+let cancelChoice8 = document.getElementById('cancel8');
+
+cancelChoice8.onclick = function () {
+  cancelChoice8.classList.add('turnedOff');
+  gradeLabel8.classList.remove('turnedOff');
+  choiceFive8.classList.remove('turnedOff');
+  choiceFour8.classList.remove('turnedOff');
+  choiceThree8.classList.remove('turnedOff');
+  choiceTwo8.classList.remove('turnedOff');
+
+  five8.classList.add('turnedOff');
+  four8.classList.add('turnedOff');
+  three8.classList.add('turnedOff');
+  two8.classList.add('turnedOff');
+}
 
 
 
@@ -451,6 +635,7 @@ choiceFive9.onclick = function () {
   choiceFour9.classList.add('turnedOff');
   choiceThree9.classList.add('turnedOff');
   choiceTwo9.classList.add('turnedOff');
+  cancelChoice9.classList.remove('turnedOff');
 };
 
 choiceFour9.onclick = function () {
@@ -460,6 +645,7 @@ choiceFour9.onclick = function () {
   choiceFour9.classList.add('turnedOff');
   choiceThree9.classList.add('turnedOff');
   choiceTwo9.classList.add('turnedOff');
+  cancelChoice9.classList.remove('turnedOff');
 };
 
 choiceThree9.onclick = function () {
@@ -469,6 +655,7 @@ choiceThree9.onclick = function () {
   choiceFour9.classList.add('turnedOff');
   choiceThree9.classList.add('turnedOff');
   choiceTwo9.classList.add('turnedOff');
+  cancelChoice9.classList.remove('turnedOff');
 };
 
 choiceTwo9.onclick = function () {
@@ -478,7 +665,28 @@ choiceTwo9.onclick = function () {
   choiceFour9.classList.add('turnedOff');
   choiceThree9.classList.add('turnedOff');
   choiceTwo9.classList.add('turnedOff');
+  cancelChoice9.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice9 = document.getElementById('cancel9');
+
+cancelChoice9.onclick = function () {
+  cancelChoice9.classList.add('turnedOff');
+  gradeLabel9.classList.remove('turnedOff');
+  choiceFive9.classList.remove('turnedOff');
+  choiceFour9.classList.remove('turnedOff');
+  choiceThree9.classList.remove('turnedOff');
+  choiceTwo9.classList.remove('turnedOff');
+
+  five9.classList.add('turnedOff');
+  four9.classList.add('turnedOff');
+  three9.classList.add('turnedOff');
+  two9.classList.add('turnedOff');
+}
+
 
 
 /*Десятый блок*/
@@ -504,6 +712,7 @@ choiceFive10.onclick = function () {
   choiceFour10.classList.add('turnedOff');
   choiceThree10.classList.add('turnedOff');
   choiceTwo10.classList.add('turnedOff');
+  cancelChoice10.classList.remove('turnedOff');
 };
 
 choiceFour10.onclick = function () {
@@ -513,6 +722,7 @@ choiceFour10.onclick = function () {
   choiceFour10.classList.add('turnedOff');
   choiceThree10.classList.add('turnedOff');
   choiceTwo10.classList.add('turnedOff');
+  cancelChoice10.classList.remove('turnedOff');
 };
 
 choiceThree10.onclick = function () {
@@ -522,6 +732,7 @@ choiceThree10.onclick = function () {
   choiceFour10.classList.add('turnedOff');
   choiceThree10.classList.add('turnedOff');
   choiceTwo10.classList.add('turnedOff');
+  cancelChoice10.classList.remove('turnedOff');
 };
 
 choiceTwo10.onclick = function () {
@@ -531,4 +742,24 @@ choiceTwo10.onclick = function () {
   choiceFour10.classList.add('turnedOff');
   choiceThree10.classList.add('turnedOff');
   choiceTwo10.classList.add('turnedOff');
+  cancelChoice10.classList.remove('turnedOff');
 };
+
+
+/*Отмена выбора*/
+
+let cancelChoice10 = document.getElementById('cancel10');
+
+cancelChoice10.onclick = function () {
+  cancelChoice10.classList.add('turnedOff');
+  gradeLabel10.classList.remove('turnedOff');
+  choiceFive10.classList.remove('turnedOff');
+  choiceFour10.classList.remove('turnedOff');
+  choiceThree10.classList.remove('turnedOff');
+  choiceTwo10.classList.remove('turnedOff');
+
+  five10.classList.add('turnedOff');
+  four10.classList.add('turnedOff');
+  three10.classList.add('turnedOff');
+  two10.classList.add('turnedOff');
+}
