@@ -1,7 +1,7 @@
 const token = 'token';
-const btn = $('input[type="send"]');
+const btn = $('button[class="form_button" type="submit"]');
 const loginURL = 'login';
-const redirectTo = '/';
+const redirectTo = 'user_spaces';
 
 
 btn.on('click', () => {
@@ -14,17 +14,29 @@ btn.on('click', () => {
         'processData': false,
         'contentType': false,
     }).done((json) => {
-        localStorage[token] = JSON.stringify(json);
+        localStorage.setItem(token, JSON.stringify(json)); // write
+        console.log(localStorage.getItem('token')); // read
         document.location.href = redirectTo;
-    }).fail(msg => {
-        notifyServerError(msg);
-    });
+    })
 })
 
-//$('body').off('click').on('click', '#flexCheckChecked', function () {
-//    if ($(this).is(':checked')) {
-//        $('#password').attr('type', 'text');
-//    } else {
-//        $('#password').attr('type', 'password');
-//    }
-//});
+function init() {
+    $.ajaxSetup({
+        beforeSend: function (xhr) {
+            const tokenFromServer = localStorage.getItem(token);
+            if (tokenFromServer) {
+                const tokenData = JSON.parse(tokenFromServer);
+                xhr.setRequestHeader('Authorization', `${tokenData.token_type} ${tokenData.access_token}`);
+            }
+        }
+    });
+    $(document).ajaxError((event, jqxhr) => {
+        if (jqxhr.status === 401) {
+            document.location.href = loginURL;
+        }
+    });
+}
+
+if (!document.location.href.endsWith(loginURL)) {
+    init();
+}

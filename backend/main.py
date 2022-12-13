@@ -11,6 +11,7 @@ from app.api.user_router import user_router
 
 from app.endpoints import signing
 from app.endpoints import spaces
+from app.endpoints import index
 
 Base.metadata.create_all(bind=engine)
 
@@ -22,13 +23,9 @@ app.include_router(test_router)
 app.include_router(user_router)
 app.include_router(signing)
 app.include_router(spaces)
+app.include_router(index)
 
 app.mount("/static", StaticFiles(directory="app/static/"), name="static")
-
-
-@app.get("/")
-def get_main():
-    return {"Msg": "Hello"}
 
 
 if __name__ == "__main__":
