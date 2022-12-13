@@ -14,3 +14,4 @@ class Module(Base):
 
     text_blocks = relationship("TextMaterial", back_populates="module")
     video_blocks = relationship("VideoMaterial", back_populates="module")
+    tests = relationship("Test", back_populates="module")

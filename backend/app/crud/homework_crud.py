@@ -59,5 +59,5 @@ def get_homework(homework_uuid: str, db: Session):
     return db.query(ModelHomeWork).filter(ModelHomeWork.uuid == homework_uuid).first()
 
 
-def get_homework_file(hw_file_uuid: str, db: Session):
-    return
+# def get_homework_file(hw_file_uuid: str, db: Session):
+#     return

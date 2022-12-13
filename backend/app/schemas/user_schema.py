@@ -30,7 +30,7 @@ class UserCreate(UserBase):
 class User(UserBase):
     id: UUID = Field(default_factory=uuid4)
     hashed_password: str
-    spaces: List[AssociationSpaces] = []
+    spaces: list[AssociationSpaces] = []
 
     class Config:
         orm_mode = True

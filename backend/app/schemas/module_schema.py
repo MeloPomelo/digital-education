@@ -1,6 +1,7 @@
 from pydantic import BaseModel
 
 from app.schemas.block_schema import TextMaterial, Video
+from app.schemas.test_schema import Test
 
 
 class ModuleBase(BaseModel):
@@ -14,8 +15,9 @@ class ModuleCreate(ModuleBase):
 class Module(ModuleBase):
     id: int
     space_id: int
-    text_material: list[TextMaterial] = []
-    video_material: list[Video] = []
+    text_blocks: list[TextMaterial] = []
+    video_blocks: list[Video] = []
+    tests: list[Test] = []
 
     class Config:
         orm_mode = True
