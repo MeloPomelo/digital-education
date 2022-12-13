@@ -17,7 +17,7 @@ from app.crud import homework_crud as CrudHomeWork
 media_router = APIRouter(
     prefix='/media',
     tags=['media'],
-    dependencies=[Depends(AuthCheck('All'))]
+    dependencies=[Depends(AuthCheck([Role.STUDENT]))]
 )
 
 
@@ -49,6 +49,6 @@ def get_homework(homework_uuid: str, db: Session = Depends(get_db)):
     return CrudHomeWork.get_homework(homework_uuid, db)
 
 
-@media_router.get("/get_homework_file/homework_file_{hw_file_id}", response_model=FileResponse)
-def get_homework_file(hw_file_uuid: str, db: Session = Depends(get_db)):
-    return
+# @media_router.get("/get_homework_file/homework_file_{hw_file_id}", response_model=FileResponse)
+# def get_homework_file(hw_file_uuid: str, db: Session = Depends(get_db)):
+#     return
