@@ -17,7 +17,7 @@ from app.crud import homework_crud as CrudHomeWork
 media_router = APIRouter(
     prefix='/media',
     tags=['media'],
-    dependencies=[Depends(AuthCheck('All'))]
+    dependencies=[Depends(AuthCheck([Role.STUDENT]))]
 )
 
 

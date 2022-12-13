@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="../static/css/moduleStyle.css">
+    <title>Доска</title>
+  </head>
+  <body>
+    <aside id="mySidenav" class="main-sidebar">
+      <a href="javascript:void(0)" class="close-sidebar" onclick="closeNav()">×</a>
+
+      <div class="main-profile">
+        <a href="#" class="profile-link">
+          <img src="img/profile2.svg" alt="Аватар пользователя" width="50px" height="50px">
+        </a>
+        <p class="name-subject">
+          <a href="profile.html" class="profile-link">Роман Никифоров</a><br>
+          Математика
+        </p>
+      </div>
+
+      <form class="page-search">
+        <input type="search" class="page-search-input">
+        <input type="submit" value="Найти" class="page-search-button">
+      </form>
+
+      <ol class="modules-list">
+        <li class="modules-list-item">
+          <details class="modules-items-details">
+            <summary>Модуль 12.09</summary>
+            <p><a href="#module12-lecture-test" class="module-detail">Тестирование</a></p>
+            <p><a href="#module12-lecture-questions" class="module-detail">Обсуждение</a></p>
+            <p><a href="#module12-start" class="module-detail">К лекции</a></p>
+        </li>
+        <li class="modules-list-item">
+          <details class="modules-items-details">
+            <summary>Модуль 19.09</summary>
+            <p><a href="#module19-lecture-test" class="module-detail">Тестирование</a></p>
+            <p><a href="#module19-lecture-questions" class="module-detail">Обсуждение</a></p>
+            <p><a href="#module19-start" class="module-detail">К лекции</a></p>
+          </details>
+        </li>
+        <li class="modules-list-item">
+          <summary><a class="module-detail" href="#new-module">Новый модуль</a></summary>
+        </li>
+      </ol>
+    </aside>
+
+    <main id="main" class="main-page">
+      <header class="main-header">
+        <span onclick="openNav()" class="open-sidebar">☰ МЕНЮ</span>
+        <a href="index.html" class="logout-button"><img src="img/logout.svg" alt="Выход" width="50px" height="50px"></a>
+      </header>
+      <div class="module12">
+        <h2 class="module-title" id="module12-start">Модуль 12.09</h2>
+        <div class="lecture-video">
+          <iframe width="700" height="350" src="https://www.youtube.com/embed/jynTNYSKNuk" title="YouTube video player"
+           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+          </iframe>
+        </div>
+
+        <a class="lecture-text" href="Текст лекции.pdf" download target="_blank">Скачать текст лекции</a>
+
+        <div class="lecture-test">
+          <h3 class="lecture-headline" id="module12-lecture-test">Тестирование</h3>
+          <p class="lectures-test-question">
+            <p class="question">Продолжите фразу: "Golden rays over glorious..."</p>
+            <ol class="answers-list">
+              <li><label><input type="radio" name="answer" value="sunshine" id="correct1">Sunshine</label></li>
+              <li><label><input type="radio" name="answer" value="moonshine" id="wrong1.1">Moonshine</label></li>
+              <li><label><input type="radio" name="answer" value="outshine" id="wrong1.2">Outshine</label></li>
+            </ol>
+            <button class="submit-answer" onclick="check1();">Проверить</button>
+            <div id="point1" class="turnedOff">✅ Правильно!</div>
+            <div id="noPoint1" class="turnedOff">❌ Неправильно!</div>
+          </p>
+
+          <p class="lectures-test-question">
+            <p class="question">Завершите четверостишье:</p>
+            Only love is with us now<br>
+            Something warm and pure<br>
+            Find the peace within ourselves<br>
+            No need for a
+            <input class="answer-input" type="text" name="text-answer" id="correct2"><br>
+            <button class="submit-answer" onclick="check2();">Проверить</button>
+            <div id="point2" class="turnedOff">✅ Правильно!</div>
+            <div id="noPoint2" class="turnedOff">❌ Неправильно!</div>
+          </p>
+
+          <p class="lectures-test-question">
+            <p class="question">2+2*2</p>
+            <ol class="answers-list">
+              <li><label><input type="radio" name="answer" value="sunshine" id="correct3">6</label></li>
+              <li><label><input type="radio" name="answer" value="moonshine" id="wrong3.1">8</label></li>
+              <li><label><input type="radio" name="answer" value="outshine" id="wrong3.2">10</label></li>
+            </ol>
+            <button class="submit-answer" onclick="check3();">Проверить</button>
+            <div id="point3" class="turnedOff">✅ Правильно!</div>
+            <div id="noPoint3" class="turnedOff">❌ Неправильно!</div>
+          </p>
+        </div>
+
+        <div class="lecture-questions">
+          <h3 class="lecture-headline" id="module12-lecture-questions">Есть вопросы? Обратитесь к преподавателю.</h3>
+          <ol class="comment-list">
+            <li class="user-comment">A Java и JavaScript - это одно и то же?</li>
+          </ol>
+          <form method="post" class="comment-form">
+            <div class="comment-inner">
+              <label class="comment-label" for="comment-field">Ваш комментарий:</label>
+              <input type="text" class="comment-field" placeholder=" " required id="comment-input">
+            </div>
+            <button class="submit-comment submit-answer" type="submit">Отправить</button>
+          </form>
+        </div>
+      </div>
+
+
+      <div class="module19">
+        <h2 class="module-title" id="module19-start">Модуль 19.09</h2>
+        <div class="lecture-video">
+          <iframe width="560" height="315" src="https://www.youtube.com/embed/Yl1_XabYqtI" title="YouTube video player"
+           frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <a class="lecture-text" href="Текст Лекции1.pdf" download target="_blank">Скачать текст лекции</a>
+
+        <div class="lecture-test">
+          <h3 class="lecture-headline" id="module19-lecture-test">Тестирование</h3>
+          <p class="lectures-test-question">
+            <p class="question">3x+5=17</p>
+            <ol class="answers-list">
+              <li><label><input type="radio" name="answer" value="5" id="wrong4.1">5</label></li>
+              <li><label><input type="radio" name="answer" value="4" id="correct4">4</label></li>
+              <li><label><input type="radio" name="answer" value="3" id="wrong4.2">3</label></li>
+            </ol>
+            <button class="submit-answer" onclick="check4();">Проверить</button>
+            <div id="point4" class="turnedOff">✅ Правильно!</div>
+            <div id="noPoint4" class="turnedOff">❌ Неправильно!</div>
+          </p>
+
+          <p class="lectures-test-question">
+            <p class="question">Квадрат гипотенузы равен сумме квадратов</p>
+            <input class="answer-input" type="text" name="text-answer" id="correct5"><br>
+            <button class="submit-answer" onclick="check5();">Проверить</button>
+            <div id="point5" class="turnedOff">✅ Правильно!</div>
+            <div id="noPoint5" class="turnedOff">❌ Неправильно!</div>
+          </p>
+
+          <p class="lectures-test-question">
+            <p class="question">3+3*3</p>
+            <ol class="answers-list">
+              <li><label><input type="radio" name="answer" value="sunshine" id="wrong6.1">9</label></li>
+              <li><label><input type="radio" name="answer" value="moonshine" id="wrong6.2">27</label></li>
+              <li><label><input type="radio" name="answer" value="outshine" id="correct6">12</label></li>
+            </ol>
+            <button class="submit-answer" onclick="check6();">Проверить</button>
+            <div id="point6" class="turnedOff">✅ Правильно!</div>
+            <div id="noPoint6" class="turnedOff">❌ Неправильно!</div>
+          </p>
+        </div>
+
+        <div class="lecture-questions">
+          <h3 class="lecture-headline" id="module19-lecture-questions">Есть вопросы? Обратитесь к преподавателю.</h3>
+          <ol class="comment-list1">
+            <li class="user-comment">фывапир</li>
+          </ol>
+          <form method="post" class="comment-form1">
+            <div class="comment-inner">
+              <label class="comment-label" for="comment-field1">Ваш комментарий:</label>
+              <input type="text" class="comment-field1" placeholder=" " required id="comment-input1">
+            </div>
+            <button class="submit-comment submit-answer" type="submit">Отправить</button>
+        </div>
+      </div>
+
+      <div class="new-module" id="new-module">
+        <button type="button" class="new-module-button">+</button>
+      </div>
+    </main>
+
+    <script src="../static/js/module.js"></script>
+  </body>
+</html>

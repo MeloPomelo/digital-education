@@ -18,7 +18,7 @@ from app.crud import space_crud
 space_router = APIRouter(
     prefix='/space',
     tags=['space'],
-    dependencies=[Depends(AuthCheck('All'))]
+    dependencies=[Depends(AuthCheck([Role.TEACHER]))]
 )
 
 

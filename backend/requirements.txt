@@ -9,6 +9,7 @@ fastapi==0.86.0
 greenlet==2.0.0.post0
 h11==0.14.0
 idna==3.4
+Jinja2==3.1.2
 Mako==1.2.3
 MarkupSafe==2.1.1
 passlib==1.7.4

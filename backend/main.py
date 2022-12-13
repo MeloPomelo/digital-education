@@ -1,5 +1,6 @@
 import uvicorn
 from fastapi import FastAPI
+from fastapi.staticfiles import StaticFiles
 
 from app.models.database import Base, engine
 
@@ -8,6 +9,8 @@ from app.api.space_router import space_router
 from app.api.test_router import test_router
 from app.api.user_router import user_router
 
+from app.endpoints import signing
+from app.endpoints import spaces
 
 Base.metadata.create_all(bind=engine)
 
@@ -17,6 +20,15 @@ app.include_router(media_router)
 app.include_router(space_router)
 app.include_router(test_router)
 app.include_router(user_router)
+app.include_router(signing)
+app.include_router(spaces)
+
+app.mount("/static", StaticFiles(directory="app/static/"), name="static")
+
+
+@app.get("/")
+def get_main():
+    return {"Msg": "Hello"}
 
 
 if __name__ == "__main__":
