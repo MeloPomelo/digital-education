@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Форма авторизации</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+<!--    <link rel="stylesheet" href="css/Signstyle.css">-->
+    <link rel="stylesheet" href="../static/css/Signstyle.css">
+  </head>
+  <body>
+    <form class="main_form" method="post" action="/login">
+      <h1 class="form_title">Вход</h1>
+      <div class="form_field">
+        <input type="text" class="form_input" placeholder=" ">
+        <label class="form_label">Логин</label>
+      </div>
+      <div class="form_field">
+        <input type="password" class="form_input" placeholder=" ">
+        <label class="form_label">Пароль</label>
+      </div>
+<!--      <div class="sign-in">-->
+<!--        <button class="form_button" type="submit">Войти</button>-->
+<!--      </div>-->
+      <input type="send" value="Войти" readOnly>
+<!--      <div class="forgot_password">-->
+<!--        <a href="#">Забыли пароль?</a>-->
+<!--      </div>-->
+    </form>
+    <script src="../static/js/signing.js"></script>
+  </body>
+</html>
