@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/profileStyle.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Профиль</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="main-profile">
+        <a href="#" class="profile-link">
+          <img src="img/profile2.svg" alt="Аватар пользователя" width="50px" height="50px">
+        </a>
+        <p class="name-subject">
+          <a href="#" class="profile-link">Роман Никифоров</a><br>
+          Математика
+        </p>
+      </div>
+
+      <a href="sign.html" class="logout-button"><img src="img/logout.svg" alt="Выход" width="50px" height="50px"></a>
+    </header>
+    <main>
+      <h1>Личные данные</h1>
+      <div class="main-profile-data">
+        <form class="profile-form" action="profile.html" method="post">
+          <div class="profile-field">
+            <input type="text" name="Имя пользователя" class="profile-input" placeholder=" ">
+            <label class="profile-label">
+              Имя
+            </label>
+          </div>
+
+          <div class="profile-field">
+            <input type="text" name="Фамилия пользователя" class="profile-input" placeholder=" ">
+            <label class="profile-label">
+              Фамилия
+            </label>
+          </div>
+
+          <div class="profile-field">
+            <input type="text" name="Отчество пользователя" class="profile-input" placeholder=" ">
+            <label class="profile-label">
+              Отчество
+            </label>
+          </div>
+
+          <div class="profile-field">
+            <input type="email" name="Email пользователя" class="profile-input" placeholder=" ">
+            <label class="profile-label">
+              Электронная почта
+            </label>
+          </div>
+
+          <div class="profile-field">
+            <input type="tel" name="Телефон пользователя" class="profile-input" placeholder=" ">
+            <label class="profile-label">
+              Телефон
+            </label>
+          </div>
+
+          <div class="profile-field">
+            <input type="password" name="Пароль" class="profile-input" placeholder=" ">
+            <label for="Пароль" class="profile-label">
+              Пароль
+            </label>
+          </div>
+            <button class="change-password" type="submit" name="change-password">Изменить пароль</button>
+
+          <button class="save-data" type="submit" name="save-data">Сохранить</button>
+        </form>
+
+        <div class="profile-avatar">
+          <div class="profile-photo"><img src="img/profile2.svg" alt="Иконка профля" width="120px" height="120px"></div>
+          <button class="change-avatar" type="button" name="button">Изменить фото</button>
+        </div>
+      </div>
+    </main>
+  </body>
+</html>
