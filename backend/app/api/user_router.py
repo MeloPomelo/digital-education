@@ -15,7 +15,7 @@ from app.crud import user_crud as crud
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 user_router = APIRouter(
-    prefix='',
+    prefix='/users',
     tags=['users'],
 )
 

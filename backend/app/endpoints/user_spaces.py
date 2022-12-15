@@ -6,6 +6,6 @@ router = APIRouter()
 templates = Jinja2Templates(directory="app/templates")
 
 
-@router.get("/user_spaces", response_class=HTMLResponse)
-async def rules(request: Request):
+@router.get("/spaces", response_class=HTMLResponse)
+async def user_spaces(request: Request):
     return templates.TemplateResponse("classes.html", {"request": request})
