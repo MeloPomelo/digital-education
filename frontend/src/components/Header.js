@@ -1,13 +1,15 @@
 import React from "react";
 import Profile from "./Profile";
-import logoutIcon from "../img/logout.png"
+import { AiOutlineLogout } from "react-icons/ai"
 
 class Header extends React.Component {
   render() {
     return (
-        <header class="main-header">
+        <header className="main-header">
             <Profile />
-            <a href="/#" class="logout-button"><img src={logoutIcon} alt="Выход" width="35px" height="35px"/></a>
+            <a href="/#" className="logout-button">
+              <AiOutlineLogout className="logout-icon"/>
+            </a>
         </header>
     )
   }
