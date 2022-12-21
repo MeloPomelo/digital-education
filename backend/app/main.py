@@ -1,6 +1,7 @@
 import uvicorn
 from fastapi import FastAPI
 from fastapi.staticfiles import StaticFiles
+from fastapi.middleware.cors import CORSMiddleware
 
 from app.models.database import Base, engine
 
@@ -17,6 +18,20 @@ Base.metadata.create_all(bind=engine)
 
 
 app = FastAPI()
+
+origins = [
+    "http://localhost:8000",
+    "http://localhost:3006",
+]
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=origins,
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
 app.include_router(media_router)
 app.include_router(space_router)
 # app.include_router(test_router)
