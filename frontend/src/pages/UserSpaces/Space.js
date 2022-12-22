@@ -8,6 +8,7 @@ class Space extends React.Component {
                 <div>
                     <h2>{this.space.title}</h2>
                     <p className="subject-description">{this.space.description}</p>
+                    <div className="open-button"><a href="#">Открыть</a></div>
                 </div>
             </li>
         )

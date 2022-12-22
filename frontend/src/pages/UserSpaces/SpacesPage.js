@@ -37,9 +37,9 @@ class SpacesPage extends React.Component {
                         <Spaces spaces={this.state.spaces}/>
                     </ul>
                 </main>
-                <aside>
+                <div>
                     <AddSpace onAdd={this.addSpace}/>
-                </aside>
+                </div>
             </div>
         )
     }

@@ -16,7 +16,7 @@ class Spaces extends React.Component {
             return (
                 <li className="classes-list-item">
                     <div>
-                        <h2>Список пространств пуст</h2>
+                        <h2>Список классов пуст</h2>
                     </div>
                 </li>
             )

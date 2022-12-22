@@ -1,5 +1,6 @@
 import React from "react";
 import { AiOutlineUser } from "react-icons/ai"
+import user from "../img/user.png"
 
 class Profile extends React.Component {
     user = [
@@ -20,7 +21,7 @@ class Profile extends React.Component {
                 {this.user.map((el) => (
                     <div className="main-profile" key={el.id}>
                         <a href="/#" className="profile-link">
-                            <AiOutlineUser className="profile-icon"/>
+                        <img width="50px" height="50px" src={user}></img>
                         </a>
                         <p className="name-subject">
                             <a href="/#" className="profile-link">{el.first_name} {el.last_name}</a>

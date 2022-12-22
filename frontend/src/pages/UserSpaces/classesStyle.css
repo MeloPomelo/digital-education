@@ -72,24 +72,20 @@ body {
 .classes-list {
   list-style: none;
   padding: 0;
-  display: grid;
-  grid-template-areas:
-    "classes-list-item classes-list-item classes-list-item"
-    "classes-list-item classes-list-item classes-list-item"
-    "classes-list-item classes-list-item classes-list-item";
-  grid-template-rows: 1fr 1fr 1fr;
-  grid-template-columns: 1fr 1fr 1fr;
-  row-gap: 15px;
-  column-gap: 15px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 .classes-list-item {
   border: 2px solid var(--basic-border-color);
   border-radius: 5px;
-  padding: 10px 10px 20px 10px;
+  padding: 20px 20px 20px 20px;
   display: grid;
   grid-template-rows: 1fr auto;
   transition: 0.5s;
+  margin-bottom: 20px;
 }
 
 .classes-list-item:hover {
@@ -117,6 +113,9 @@ body {
   display: block;
   margin: 0 auto;
   cursor: pointer;
+  outline: none;
+  color: white;
+  font-weight: 600;
 }
 
 .open-button a {
@@ -129,5 +128,48 @@ body {
 }
 
 .open-button:active {
+  background-color: var(--basic-open-active);
+}
+
+/*Форма добавления элементов */
+
+.class-add-form {
+  border: 2px solid var(--basic-border-color);
+  border-radius: 30px;
+  padding: 20px;
+  display: grid;
+  row-gap: 15px;
+  margin-bottom: 40px;
+  transition: 0.4s;
+}
+
+.class-add-form:hover,
+.class-add-form:focus {
+  border-color: var(--basic-border-hover);
+}
+
+.class-add-input {
+  height: 40px;
+  font-size: 18px;
+}
+
+.class-add-button {
+  border: none;
+  border-radius: 30px;
+  background-color: var(--basic-open-button);
+  color: white;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px;
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.class-add-button:hover {
+  background-color: var(--basic-open-hover);
+}
+
+.class-add-button:active {
   background-color: var(--basic-open-active);
 }
