@@ -5,22 +5,16 @@ import './AuthStyle.css'
 
 
 async function loginUser(credentials) {
-    return fetch('http://localhost:8000/users/login', {
-      method: 'POST',
-      headers: {
-        'accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded', 
-      },
-      body: JSON.stringify(credentials)
-    })
-      .then(data => data.json())
+    const formData = new FormData()
+    formData.append("username", credentials.username)
+    formData.append("password", credentials.password)
+    return axios.post('http://localhost:8000/users/login', formData).then((response) => response.data)
 }
 
 
 export default function Login({ setToken }) {
     const [username, setUserName] = useState();
     const [password, setPassword] = useState();
-
     const handleSubmit = async e => {
         e.preventDefault();
         const token = await loginUser({
