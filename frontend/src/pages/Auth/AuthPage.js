@@ -1,5 +1,4 @@
 import React, { useState }from "react";
-import axios from "axios"
 import PropTypes from 'prop-types';
 import './AuthStyle.css'
 
@@ -9,7 +8,7 @@ async function loginUser(credentials) {
       method: 'POST',
       headers: {
         'accept': 'application/json',
-        'Content-Type': 'application/x-www-form-urlencoded', 
+        'Content-Type': 'application/json', 
       },
       body: JSON.stringify(credentials)
     })

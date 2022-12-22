@@ -1,0 +1,133 @@
+:root {
+  --basic-border-color: #66CDAA;
+  --basic-border-hover: #DC143C;
+  --basic-open-button: #40E0D0;
+  --basic-open-hover: #DC143C;
+  --basic-open-active: #FFD700;
+}
+
+body {
+  padding: 0 70px;
+  margin: 0 auto;
+  font-size: 17px;
+  font-family: sans-serif;
+}
+
+/*Header*/
+
+.main-header {
+  display: grid;
+  grid-template-columns: 1fr 50px;
+  padding-top: 20px;
+  margin-bottom: 60px;
+}
+
+.main-profile {
+  display: flex;
+}
+
+.name-subject {
+  padding: 5px 0 0 0;
+  margin: 0;
+  text-align: center;
+  margin-left: 20px;
+}
+
+.profile-link,
+.classes-list-item a {
+  transition: 0.4s;
+  text-decoration: none;
+  color: black;
+}
+
+.profile-link:hover {
+  opacity: 0.5;
+}
+
+.profile-link:active {
+  opacity: 0.3;
+}
+
+.logout-button {
+  transition: 0.4s;
+}
+
+.logout-button:hover {
+  opacity: 0.5;
+}
+
+.logout-button:active {
+  opacity: 0.3;
+}
+
+/*Classes*/
+
+.classes-logo {
+  text-align: center;
+  font-size: 44px;
+  margin-bottom: 60px;
+}
+
+
+.classes-list {
+  list-style: none;
+  padding: 0;
+  display: grid;
+  grid-template-areas:
+    "classes-list-item classes-list-item classes-list-item"
+    "classes-list-item classes-list-item classes-list-item"
+    "classes-list-item classes-list-item classes-list-item";
+  grid-template-rows: 1fr 1fr 1fr;
+  grid-template-columns: 1fr 1fr 1fr;
+  row-gap: 15px;
+  column-gap: 15px;
+}
+
+.classes-list-item {
+  border: 2px solid var(--basic-border-color);
+  border-radius: 5px;
+  padding: 10px 10px 20px 10px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  transition: 0.5s;
+}
+
+.classes-list-item:hover {
+  border-color: var(--basic-border-hover);
+}
+
+.classes-list-item h2 {
+  margin: 0;
+  padding: 0;
+}
+
+
+.subject-description {
+  margin-bottom: 40px;
+}
+
+.open-button {
+  border-radius: 3px;
+  text-transform: uppercase;
+  background-color: var(--basic-open-button);
+  transition: 0.5s;
+  padding: 10px 20px 10px 20px;
+  width: 100px;
+  text-align: center;
+  display: block;
+  margin: 0 auto;
+  cursor: pointer;
+}
+
+.open-button a {
+  color: white;
+  font-weight: 600;
+}
+
+.open-button:hover {
+  background-color: var(--basic-open-hover);
+}
+
+.open-button:active {
+  background-color: var(--basic-open-active);
+}
