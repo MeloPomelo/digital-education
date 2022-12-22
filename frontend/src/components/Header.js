@@ -1,6 +1,6 @@
 import React from "react";
 import Profile from "./Profile";
-import { AiOutlineLogout } from "react-icons/ai"
+import logout from "../img/logout.png"
 
 class Header extends React.Component {
   // openNav() {
@@ -11,10 +11,9 @@ class Header extends React.Component {
   render() {
     return (
         <header className="main-header">
-            <span onClick="openNav()" className="open-sidebar">☰ МЕНЮ</span>
             <Profile />
-            <a href="/#" className="logout-button">
-              <AiOutlineLogout className="logout-icon"/>
+            <a a href="/#" className="logout-button">
+              <img width="50px" height="50px" src={logout}></img>
             </a>
         </header>
     )
