@@ -2,6 +2,7 @@ import React from "react";
 import Header from "../../components/Header";
 import Spaces from "./Spaces";
 import AddSpace from "./AddSpace";
+import "./classesStyle.css"
 
 
 class SpacesPage extends React.Component {

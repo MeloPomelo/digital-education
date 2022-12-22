@@ -1,5 +1,4 @@
 import React, { useState }from "react";
-import axios from "axios"
 import PropTypes from 'prop-types';
 import './AuthStyle.css'
 
@@ -9,6 +8,15 @@ async function loginUser(credentials) {
     formData.append("username", credentials.username)
     formData.append("password", credentials.password)
     return axios.post('http://localhost:8000/users/login', formData).then((response) => response.data)
+    return fetch('http://localhost:8000/users/login', {
+      method: 'POST',
+      headers: {
+        'accept': 'application/json',
+        'Content-Type': 'application/json', 
+      },
+      body: JSON.stringify(credentials)
+    })
+      .then(data => data.json())
 }
 
 

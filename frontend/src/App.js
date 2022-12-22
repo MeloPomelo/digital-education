@@ -2,12 +2,18 @@ import React, { useState } from "react";
 import { BrowserRouter, Route, Switch, Routes } from 'react-router-dom';
 import SpacesPage from "./pages/UserSpaces/SpacesPage";
 import AuthPage from "./pages/Auth/AuthPage"
-import useToken from "./components/useToken";
+
 
 
 function App() {
     const { token, setToken } = useToken();
     
+    function getToken() {
+        const tokenString = sessionStorage.getItem('token');
+        const userToken = JSON.parse(tokenString);
+        return userToken?.token
+    }
+
     if(!token) {
         return <AuthPage setToken={setToken} />
     }
@@ -15,8 +21,8 @@ function App() {
     return ( 
         <BrowserRouter>
             <Routes>
-                <Route path="/user-spaces" element={<SpacesPage />} />
-                <Route path="/login" element={<AuthPage />} /> 
+                <Route path="/userspaces" element={<SpacesPage />} />
+                <Route path="/space" element={<SpacePage />} />
             </Routes>
         </BrowserRouter>
     )
