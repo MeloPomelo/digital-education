@@ -2,7 +2,6 @@ import React from "react";
 import { AiOutlineUser } from "react-icons/ai"
 import axios from "axios"
 import user from "../img/user.png"
-import useToken from "./useToken";
 
 const token = sessionStorage.getItem('token')
 
