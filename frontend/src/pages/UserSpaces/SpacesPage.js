@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState }from "react";
 import Header from "../../components/Header";
 import Spaces from "./Spaces";
 import axios from "axios"
@@ -17,7 +17,7 @@ class SpacesPage extends React.Component {
     constructor (props) {
         super(props)
 
-        axios.get('http://localhost:8000/space/?skip=0&limit=100', config).then((response) => {
+        axios.get('http://localhost:8000/space/get_user_spaces', config).then((response) => {
             this.setState({spaces: response.data})
         })
 
@@ -26,13 +26,22 @@ class SpacesPage extends React.Component {
         }
         this.addSpace = this.addSpace.bind(this)
     }
-    
+    /** пытался запусть вместе добавлением пространства с добавлением юзера в это пространство, но там промисы вылезают,
+     * а если к примеру написать в .then console.log(response.data) то все нормально выводит, сидел часа 2 с этой по****й,
+     * поэтому просто закомментировал, хз что там делать, ну подгрузка пространств у отдельного пользователя работает, 
+     * добавлять через свагер, на этом мои силы иссякли... Может получится разобраться с axios и как нормально данные вернуть.
+     * Оставил файл практически без изменений. Ну и все работает при перезагрузке страницы только, пока не знаю как фиксить.
+     */
     addSpace(space) {
-        console.log(space)
-        axios.post('http://localhost:8000/space/', space, config).then((response) => {
-            this.setState({spaces: response.data})
-            console.log(response.data)
-        })
+        /** const newSpace =*/axios.post('http://localhost:8000/space/', space, config).then((response) => this.setState({spaces: response.data}))
+        // this.setState({spaces: newSpace})
+        // const user = axios.get('http://localhost:8000/users/me', config).then((response) => response.data)
+        // console.log(newSpace)
+        // console.log(user)
+        // axios.post('http://localhost:8000/space/add_user', {
+        //     space_id: newSpace.id,
+        //     user_id: user.id
+        // }, config)
     }
     
     render () {
