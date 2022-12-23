@@ -12,6 +12,7 @@ services:
 
   web:
     build: ./backend
+    image: backend:21
     command: bash -c "alembic upgrade head && uvicorn app.main:app --host 0.0.0.0 --port 8000 --reload"
     volumes:
       - ./backend:/usr/src/app
@@ -22,6 +23,7 @@ services:
 
   frontend:
     build: ./frontend
+    image: frontend:31
     ports:
       - "3006:3006"
     expose:
