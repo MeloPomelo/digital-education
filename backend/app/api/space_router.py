@@ -7,12 +7,13 @@ from app.domains.role import Role
 
 from app.models.space_model import Space
 from app.models.space_model import Association
+from app.models.user_model import User
 
 from app.schemas.space_schema import Space as SchemaSpace
 from app.schemas.space_schema import SpaceCreate as SchemaSpaceCreate
 from app.schemas.space_schema import Association as SchemaAssociation
 
-from app.crud import space_crud
+from app.crud import space_crud, user_crud
 
 
 space_router = APIRouter(
@@ -31,6 +32,11 @@ def create_space(space: SchemaSpaceCreate, db: Session = Depends(get_db)):
 @space_router.get("/", response_model=list[SchemaSpace])
 def read_spaces(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return db.query(Space).offset(skip).limit(limit).all()
+
+
+@space_router.get("/get_user_spaces", response_model=list[SchemaSpace])
+async def read_user_spaces(db: Session = Depends(get_db), current_user: User = Depends(user_crud.get_current_user)):
+    return db.query(Space).join(Space.users).filter(Space.users.property.mapper.c.user_id == current_user.id).all()
 
 
 @space_router.delete('/space_{space_id}', response_model=dict)
