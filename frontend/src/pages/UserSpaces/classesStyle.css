@@ -63,7 +63,6 @@ body {
 /*Classes*/
 
 .classes-logo {
-  text-align: center;
   font-size: 44px;
   margin-bottom: 60px;
 }
@@ -116,6 +115,7 @@ body {
   outline: none;
   color: white;
   font-weight: 600;
+  margin-bottom: 15px;
 }
 
 .open-button a {
@@ -151,6 +151,7 @@ body {
 .class-add-input {
   height: 40px;
   font-size: 18px;
+  margin-bottom: 20px;
 }
 
 .class-add-button {

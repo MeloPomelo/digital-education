@@ -171,6 +171,12 @@ aside {
   font-size: 20px;
 }
 
+.module-title {
+  position: relative;
+  right: 560px;
+  margin-bottom: 40px;
+}
+
 .module19 {
   border-top: 1px solid var(--basic-light-gray);
 }
@@ -306,7 +312,7 @@ aside {
 }
 
 .elementButton {
-  width: 200px;
+  width: 250px;
   border: none;
   font-size: 20px;
   background-color: var(--basic-color);
@@ -327,24 +333,56 @@ aside {
   background-color: var(--basic-active);
 }
 
+.elementButtonDescription {
+  text-transform: none;
+  font-weight: 500;
+}
+
 .turnedOff {
   display: none;
 }
 
 /*New module*/
 
-.new-module-button {
-  width: 70%;
+.new-module {
+  border: 2px solid var(--basic-color);
+  border-radius: 5px;
+  padding: 20px 20px 20px 20px;
+  display: grid;
+  grid-template-rows: 1fr auto;
+  transition: 0.5s;
+  margin-bottom: 20px;
+  transition: 0.4s;
+}
+
+.new-module:hover {
+  border-color: var(--basic-hover);
+}
+
+.module-add-input {
+  height: 40px;
+  font-size: 18px;
+  margin-bottom: 20px;
+  margin-bottom: 20px;
+}
+
+.module-add-button {
   border: none;
-  border-radius: 20px;
+  border-radius: 30px;
   background-color: var(--basic-color);
   color: white;
-  font-size: 32px;
-  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 24px;
+  font-weight: 600;
+  padding: 20px;
   cursor: pointer;
   transition: 0.4s;
 }
 
-.new-module-button:hover {
-  background-color: var(--basic-hover);
+.module-add-button:hover {
+  background-color: var(--basic-open-hover);
+}
+
+.module-add-button:active {
+  background-color: var(--basic-open-active);
 }

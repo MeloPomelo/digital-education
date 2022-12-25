@@ -41,7 +41,7 @@ class ProfilePage extends React.Component {
         return (
             <div>
                 <Header />
-                <main>
+                <main className = "profile-border">
                     <h1>Личные данные</h1>
                     <div className="main-profile-data" key={this.state.user.id}>
                         <form className="profile-form" action="profile.html" method="post">
@@ -91,7 +91,9 @@ class ProfilePage extends React.Component {
                                 Пароль
                                 </label>
                             </div>
-                                <button className="change-password" type="submit" name="change-password">Изменить пароль</button>
+                            <button className="change-password" type="submit" name="change-password">Изменить пароль</button>
+                            
+                            <a href="classes.html" class="toClasses" name="toClasses">К классам</a>
 
                             <button className="save-data" type="submit" name="save-data" onClick={() => this.updateUser({
                                 first_name: this.state.first_name,

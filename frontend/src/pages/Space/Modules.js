@@ -1,5 +1,7 @@
 import React from "react";
-
+import video_icon from "./video.svg"
+import comments_icon from "./file.svg"
+import test_icon from "./search.svg"
 
 class Module extends React.Component {
     render() {
@@ -68,11 +70,22 @@ class Module extends React.Component {
                 </div>
         
                 <div className="elementButtons">
-                    <button type="button" className="elementButton" id="module12-lectureButton">Лекция</button>
-            
-                    <button type="button" className="elementButton" id="module12-testButton">Тест</button>
-            
-                    <button type="button" className="elementButton" id="module12-comments">Комментарии</button>
+                    <div className="elementButton">
+                        <img src={video_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                        <h3>Видеоматериал</h3>
+                        <p className="elementButtonDescription">Описание видеоматериала</p>
+                    </div>
+
+                    <div className="elementButton">
+                        <img src={test_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                        <h3>Тестирование</h3>
+                        <p className="elementButtonDescription">Описание тестирования</p>
+                    </div>
+
+                    <div className="elementButton">
+                        <img src={comments_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                        <h3>Комментарии</h3>
+                    </div>
                 </div>
           </div>
         )

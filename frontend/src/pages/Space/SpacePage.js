@@ -9,9 +9,9 @@ class SpacePage extends React.Component {
     render(){
         return (
             <div>
-                <aside id="mySidenav" className="main-sidebar">
+                {/* <aside id="mySidenav" className="main-sidebar">
                     <SideNav />
-                </aside>
+                </aside> */}
                 <main id="main" className="main-page">
                     <Header />
                     <Modules />
