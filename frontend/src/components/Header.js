@@ -1,6 +1,11 @@
 import React from "react";
 import Profile from "./Profile";
-import logout from "../img/logout.png"
+import logoutImg from "../img/logout.png"
+
+const logout = () => {
+  sessionStorage.removeItem("token")
+  window.location.reload()
+}
 
 class Header extends React.Component {
   // openNav() {
@@ -12,8 +17,8 @@ class Header extends React.Component {
     return (
         <header className="main-header">
             <Profile />
-            <a a href="/#" className="logout-button">
-              <img width="50px" height="50px" src={logout}></img>
+            <a className="logout-button">
+              <img width="50px" height="50px" onClick={logout} src={logoutImg} />
             </a>
         </header>
     )
