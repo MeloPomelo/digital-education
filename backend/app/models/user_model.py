@@ -16,6 +16,9 @@ class User(Base):
     hashed_password = Column(String)
     first_name = Column(String)
     last_name = Column(String)
+    patronymic = Column(String)
+    email = Column(String)
+    phone_number = Column(String)
     role = Column(Enum(Role))
 
     spaces = relationship("Association", back_populates="user")

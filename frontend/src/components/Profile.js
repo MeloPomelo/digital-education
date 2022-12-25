@@ -19,18 +19,25 @@ class Profile extends React.Component {
         })
 
         this.state = {
-            user: []
+            user: {
+                "username": "",
+                "first_name": "",
+                "last_name": "",
+                "patronymic": "",
+                "email": "",
+                "phone_number": "",
+            }
         }
     }
     
     render() {
         return (
                 <div className="main-profile" key={this.state.user.id}>
-                    <a href="/#" className="profile-link">
+                    <a href="/profile" className="profile-link">
                     <img width="50px" height="50px" src={user}></img>
                     </a>
                     <p className="name-subject">
-                        <a href="/#" className="profile-link">{this.state.user.first_name} {this.state.user.last_name}</a>
+                        <a href="/profile" className="profile-link">{this.state.user.first_name} {this.state.user.last_name}</a>
                     </p>
                 </div>
         )

@@ -5,7 +5,7 @@ import Header from "../../components/Header";
 import AddModule from "./AddModule";
 import "./userSpaceStyle.css"
 
-class SpacesPage extends React.Component {
+class SpacePage extends React.Component {
     render(){
         return (
             <div>
@@ -22,4 +22,4 @@ class SpacesPage extends React.Component {
     }
 }
 
-export default SpacesPage
+export default SpacePage
