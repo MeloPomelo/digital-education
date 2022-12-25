@@ -12,6 +12,7 @@ from app.models.user_model import User
 from app.schemas.space_schema import Space as SchemaSpace
 from app.schemas.space_schema import SpaceCreate as SchemaSpaceCreate
 from app.schemas.space_schema import Association as SchemaAssociation
+from app.schemas.user_schema import User as SchemaUser
 
 from app.crud import space_crud, user_crud
 
@@ -37,6 +38,11 @@ def read_spaces(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
 @space_router.get("/get_user_spaces", response_model=list[SchemaSpace])
 async def read_user_spaces(db: Session = Depends(get_db), current_user: User = Depends(user_crud.get_current_user)):
     return db.query(Space).join(Space.users).filter(Space.users.property.mapper.c.user_id == current_user.id).all()
+
+
+@space_router.get("/get_all_user_in_space", response_model=list[SchemaUser])
+async def read_spaces_user(space_id: int, db: Session = Depends(get_db)):
+    return db.query(User).join(User.spaces).filter(User.spaces.property.mapper.c.space_id == space_id).all()
 
 
 @space_router.delete('/space_{space_id}', response_model=dict)
