@@ -25,25 +25,27 @@ export default function Login({ setToken }) {
       }
 
     return (
-        <form className="main_form" onSubmit={handleSubmit}>
-            <h1 className="form_title">Вход</h1>
-            <div className="form_field">
-                <input className="form_input" placeholder=" " type="text" required name="username"
-                    onChange={(e) => setUserName(e.target.value)}/>
-                <label className="form_label">Логин</label>
-            </div>
-            <div className="form_field">
-                <input className="form_input" placeholder=" " type="password" required name="password"
-                    onChange={(e) => setPassword(e.target.value)}/>
-                <label className="form_label">Пароль</label>
-            </div>
-            <div className="sign-in">
-                <button className="form_button" type="submit">Войти</button>
-            </div>
-            <div className="forgot_password">
-                <a href="/#">Забыли пароль?</a>
-            </div>
-        </form>
+        <div className="background">
+            <form className="main_form" onSubmit={handleSubmit}>
+                <h1 className="form_title">Вход</h1>
+                <div className="form_field">
+                    <input className="form_input" placeholder=" " type="text" required name="username"
+                        onChange={(e) => setUserName(e.target.value)}/>
+                    <label className="form_label">Логин</label>
+                </div>
+                <div className="form_field">
+                    <input className="form_input" placeholder=" " type="password" required name="password"
+                        onChange={(e) => setPassword(e.target.value)}/>
+                    <label className="form_label">Пароль</label>
+                </div>
+                <div className="sign-in">
+                    <button className="form_button" type="submit">Войти</button>
+                </div>
+                <div className="forgot_password">
+                    <a href="/#">Забыли пароль?</a>
+                </div>
+            </form>
+        </div>
     )
 }
 

@@ -19,12 +19,23 @@ class UserBase(BaseModel):
     username: str
     first_name: str
     last_name: str
+    patronymic: str
+    email: str
+    phone_number: str
     role: Optional[Role]
     # disabled: Union[bool, None] = None
 
 
 class UserCreate(UserBase):
     password: str
+
+
+class UserUpdate(BaseModel):
+    first_name: str
+    last_name: str
+    patronymic: str
+    email: str
+    phone_number: str
 
 
 class User(UserBase):

@@ -4,11 +4,12 @@
   --basic-hover-button: #DC143C;
 }
   
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+.background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   background-color: var(--basic-light-gray);
 }
   
@@ -16,6 +17,7 @@ body {
   position: relative;
   z-index: 1;
   width: 300px;
+  margin: 200px auto;
   padding: 32px;
   border-radius: 10px;
   box-shadow: 0 4px 16px #ccc;
