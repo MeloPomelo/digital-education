@@ -2,6 +2,12 @@ import React from "react";
 
 class Space extends React.Component {
     space = this.props.space
+    
+    // handleClick = (e) => {
+    //     e.preventDefault();
+    //     sessionStorage.setItem('space_id', this.space.id)
+    // }
+
     render() {
         return (
             <li className="classes-list-item">

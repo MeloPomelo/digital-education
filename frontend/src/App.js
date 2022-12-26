@@ -5,6 +5,7 @@ import SpacePage from "./pages/Space/SpacePage";
 import AuthPage from "./pages/Auth/AuthPage"
 import ProfilePage from "./pages/Profile/ProfilePage";
 import useToken from "./components/useToken";
+import ClassTeacher from "./pages/Class/Class";
 
 
 
@@ -24,6 +25,7 @@ function App() {
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/space" element={<SpacePage />} />
                 <Route path="/login" element={<AuthPage />} />
+                <Route path="/classTeacher" element={<ClassTeacher />} />
             </Routes>
         </BrowserRouter>
     )
