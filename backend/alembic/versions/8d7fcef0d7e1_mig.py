@@ -1,8 +1,8 @@
 """mig
 
-Revision ID: 8e761cfbec9f
-Revises: 
-Create Date: 2022-12-23 12:11:32.491115
+Revision ID: 8d7fcef0d7e1
+Revises: 3cff4be0e214
+Create Date: 2022-12-26 09:08:11.113898
 
 """
 from alembic import op
@@ -10,8 +10,8 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision = '8e761cfbec9f'
-down_revision = None
+revision = '8d7fcef0d7e1'
+down_revision = '3cff4be0e214'
 branch_labels = None
 depends_on = None
 

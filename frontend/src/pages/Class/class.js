@@ -1,7 +1,8 @@
-import React, { useState }from "react";
+import React, { useState } from "react";
 import Header from "../../components/Header";
-import axios from "axios"
-import "./classTeacherStyle.css"
+import axios from "axios";
+import ListUsers from "./ClassList";
+import "./classTeacherStyle.css";
 
 const token = sessionStorage.getItem('token')
 
@@ -10,6 +11,9 @@ const config = {
         Authorization: `Bearer ${token}`
     }
 }
+
+const space_id = sessionStorage.getItem('space_id')
+
 
 class ClassTeacher extends React.Component {
     constructor (props) {
@@ -21,15 +25,24 @@ class ClassTeacher extends React.Component {
 
         this.state = {
             users: []
+
         }
     }
 
     render () {
-        <div>
-            <Header />
-            <main>
-                <h1 class="classHeadline">Класс</h1>
-            </main>
-        </div>
+        return (
+            <div>
+                <Header />
+                <main>
+                    <h1 className="classHeadline">Класс</h1>
+                    <p><a href="/userspaces" className="backToClasses">Назад</a></p>
+
+                    <ListUsers users={this.state.users} />
+                    <a href="/space" className="toBoard">Доска</a>
+                </main>
+            </div>
+        )
     }
 }
+
+export default ClassTeacher
