@@ -386,3 +386,7 @@ aside {
 .module-add-button:active {
   background-color: var(--basic-open-active);
 }
+
+.block-link {
+  text-decoration: none;
+}

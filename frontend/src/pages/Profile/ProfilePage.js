@@ -28,6 +28,7 @@ class ProfilePage extends React.Component {
                 "patronymic": "",
                 "email": "",
                 "phone_number": "",
+                "role": ""
             }
         }
     }
@@ -47,7 +48,11 @@ class ProfilePage extends React.Component {
                         <form className="profile-form" action="profile.html" method="post">
                             <div className="profile-field">
                                 <input type="text" name="Имя пользователя" className="profile-input" placeholder=" " 
-                                    onChange={(e) => this.setState({ first_name: e.target.value})}/>
+                                    onChange={(e) => {
+                                        if(e.target.value != ""){
+                                            this.setState({ first_name: e.target.value})
+                                        }
+                                    }}/>
                                 <label className="profile-label">
                                     {this.state.user.first_name}
                                 </label>
@@ -86,6 +91,13 @@ class ProfilePage extends React.Component {
                             </div>
 
                             <div className="profile-field">
+                                <input type="role" name="Роль пользователя" className="profile-input" placeholder=" "/>
+                                <label className="profile-label">
+                                    {this.state.user.role}
+                                </label>
+                            </div>
+
+                            <div className="profile-field">
                                 <input type="password" name="Пароль" className="profile-input" placeholder=" "/>
                                 <label for="Пароль" className="profile-label">
                                 Пароль
@@ -93,7 +105,7 @@ class ProfilePage extends React.Component {
                             </div>
                             <button className="change-password" type="submit" name="change-password">Изменить пароль</button>
                             
-                            <a href="classes.html" class="toClasses" name="toClasses">К классам</a>
+                            <a href="userspaces" className="toClasses" name="toClasses">К классам</a>
 
                             <button className="save-data" type="submit" name="save-data" onClick={() => this.updateUser({
                                 first_name: this.state.first_name,
