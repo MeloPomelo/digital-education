@@ -1,12 +1,12 @@
 :root {
   --basic-table-color: #C0C0C0;
   --basic-student-color: #00CED1;
-  --basic-student-hover: #DC143C;
+  --basic-student-hover: #40E0D0;
   --basic-fiveGrade-color: #00FF00;
   --basic-fourGrade-color: #32CD32;
   --basic-threeGrade-color: #FFD700;
   --basic-twoGrade-color: #FF0000;
-}
+}s
 
 body {
   padding: 0 70px;
