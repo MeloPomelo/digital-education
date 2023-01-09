@@ -1,9 +1,9 @@
 :root {
-  --basic-border-color: #66CDAA;
-  --basic-border-hover: #DC143C;
-  --basic-open-button: #40E0D0;
-  --basic-open-hover: #DC143C;
-  --basic-open-active: #FFD700;
+  --basic-border-color: #00CED1;
+  --basic-border-hover: #40E0D0;
+  --basic-open-button: #00CED1;
+  --basic-open-hover: #40E0D0;
+  --basic-open-active: #7FFFD4;
 }
 
 body {
