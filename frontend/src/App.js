@@ -5,7 +5,7 @@ import SpacePage from "./pages/Space/SpacePage";
 import AuthPage from "./pages/Auth/AuthPage"
 import ProfilePage from "./pages/Profile/ProfilePage";
 import useToken from "./components/useToken";
-import ClassTeacher from "./pages/Class/class";
+import ClassTeacher from "./pages/Class/Class";
 
 
 
@@ -14,9 +14,9 @@ function App() {
 
     //Закомментировать для запуска через npm 
 
-    // if(!token) {
-    //     return <AuthPage setToken={setToken} />
-    // }
+    if(!token) {
+        return <AuthPage setToken={setToken} />
+    }
     
     return ( 
         <BrowserRouter>
