@@ -322,6 +322,7 @@ aside {
   transition: 0.4s;
   cursor: pointer;
   text-transform: uppercase;
+  margin-bottom: 20px;
 }
 
 .elementButton:hover {
