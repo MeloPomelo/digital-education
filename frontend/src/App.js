@@ -5,7 +5,7 @@ import SpacePage from "./pages/Space/SpacePage";
 import AuthPage from "./pages/Auth/AuthPage"
 import ProfilePage from "./pages/Profile/ProfilePage";
 import useToken from "./components/useToken";
-import ClassTeacher from "./pages/Class/Class";
+import ClassTeacher from "./pages/Class/class";
 
 
 

@@ -2,12 +2,28 @@ import React from "react";
 import Modules from "./Modules";
 import Header from "../../components/Header";
 import AddModule from "./AddModule";
+import axios from "axios"
 import "./userSpaceStyle.css"
 
+
+const token = sessionStorage.getItem('token')
+
+const config = {
+    headers: {
+        Authorization: `Bearer ${token}`
+    }
+}
+
+const space_id = sessionStorage.getItem('space_id')
 
 class SpacePage extends React.Component {
     constructor (props) {
         super(props)
+
+        axios.get('http://localhost:8000/space/' + space_id, config).then((response) => {
+            this.setState({modules: response.data.modules})
+        })
+        
         this.state = {
             modules: [
                 {

@@ -45,6 +45,11 @@ async def read_spaces_user(space_id: int, db: Session = Depends(get_db)):
     return db.query(User).join(User.spaces).filter(User.spaces.property.mapper.c.space_id == space_id).all()
 
 
+@space_router.get("/{space_id}", response_model=SchemaSpace)
+def read_space_by_id(space_id: int, db: Session = Depends(get_db)):
+    return space_crud.get_space(db=db, space_id=space_id)
+
+
 @space_router.delete('/space_{space_id}', response_model=dict)
 def delete_space(space_id: int, db: Session = Depends(get_db)):
     db_space = space_crud.get_space(db, space_id=space_id)
