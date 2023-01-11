@@ -1,7 +1,7 @@
 import React from "react";
-import video_icon from "./img/video.svg"
-import comments_icon from "./img/file.svg"
-import test_icon from "./img/search.svg"
+import TextMaterial from "./blocks/TextMaterial";
+import VideoMaterial from "./blocks/VideoMaterial";
+import TestMaterial from "./blocks/TestMaterial";
 
 
 class Module extends React.Component {
@@ -20,7 +20,7 @@ class Module extends React.Component {
                         <VideoMaterial key={el.id} videoMaterial={el}/>
                     ))}     
 
-                    {this.props.module.video_blocks.map((el) => (
+                    {this.props.module.tests.map((el) => (
                         <TestMaterial key={el.id} testMaterial={el}/>
                     ))}                
                     
