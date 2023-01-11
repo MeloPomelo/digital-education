@@ -21,7 +21,7 @@ ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 pwd_context = CryptContext(schemes=["bcrypt"], deprecated="auto")
 
-oauth2_scheme = OAuth2PasswordBearer(tokenUrl="login")
+oauth2_scheme = OAuth2PasswordBearer(tokenUrl="users/login")
 
 
 def verify_password(plain_password, hashed_password):
@@ -63,12 +63,30 @@ def create_user(db: Session, user: schemas.UserCreate):
         hashed_password=hashed_password,
         first_name=user.first_name,
         last_name=user.last_name,
+        patronymic=user.patronymic,
+        email=user.email,
+        phone_number=user.phone_number,
         role=Role(user.role)
     )
     db.add(db_user)
     db.commit()
     db.refresh(db_user)
     return db_user
+
+
+def update_user(new_user_data: schemas.UserUpdate, current_user: User, db: Session):
+    new_user = db.query(User).filter(User.username == current_user.username).first()
+    
+    new_user.first_name = new_user_data.first_name
+    new_user.last_name = new_user_data.last_name
+    new_user.patronymic = new_user_data.patronymic
+    new_user.email = new_user_data.email
+    new_user.phone_number = new_user_data.phone_number
+    
+    db.add(new_user)
+    db.commit()
+    db.refresh(new_user)
+    return new_user
 
 
 async def get_current_user(db: Session = Depends(get_db), token: str = Depends(oauth2_scheme)):
@@ -89,9 +107,3 @@ async def get_current_user(db: Session = Depends(get_db), token: str = Depends(o
     if user is None:
         raise credentials_exception
     return user
-
-
-# async def get_current_active_user(current_user: User = Depends(get_current_user)):
-#     if current_user.disabled:
-#         raise HTTPException(status_code=400, detail="Inactive user")
-#     return current_user

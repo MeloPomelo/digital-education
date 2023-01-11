@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ru" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/classTeacherStyle.css">
+    <title>Класс</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="main-profile">
+        <a href="#" class="profile-link">
+          <img src="img/profile2.svg" alt="Аватар пользователя" width="50px" height="50px">
+        </a>
+        <p class="name-subject">
+          <a href="profile.html" class="profile-link">Роман Никифоров</a><br>
+          Математика
+        </p>
+      </div>
+
+      <a href="sign.html" class="logout-button"><img src="img/logout.svg" alt="Выход" width="50px" height="50px"></a>
+    </header>
+
+    <main>
+      <h1 class="classHeadline">Класс</h1>
+      <p>Преподаватель: Яковлев Андрей Андреевич</p>
+      <p><a href="classes.html" class="backToClasses">Назад</a></p>
+
+      <table class="classTable">
+        <thead class="classTableHead">
+          <th>№</th>
+          <th>ФИО ученика</th>
+          <th>Оценки</th>
+          <th>Д/З</th>
+        </thead>
+        <tbody>
+          <tr class="tableMainRow">
+            <td>1</td>
+            <td><a href="profile.html" class="student">Смирнова Нина Родионовна</a></td>
+            <td>
+              <label id="label1">Выберите оценку:</label>
+              <button id="chooseFive1" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour1" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree1" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo1" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade1" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade1" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade1" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade1" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel1" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>2</td>
+            <td><a href="profile.html" class="student">Зорин Максим Русланович</a></td>
+            <td>
+              <label id="label2">Выберите оценку:</label>
+              <button id="chooseFive2" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour2" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree2" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo2" class="chooseTwo" type="submit">2</button>
+              <div class="gradeGrid">
+                <div id="fiveGrade2" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade2" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade2" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade2" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel2" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>3</td>
+            <td><a href="profile.html" class="student">Сазонов Максим Кириллович</a></td>
+            <td>
+              <label id="label3">Выберите оценку:</label>
+              <button id="chooseFive3" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour3" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree3" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo3" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade3" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade3" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade3" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade3" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel3" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>4</td>
+            <td><a href="profile.html" class="student">Лапин Владимир Александрович</a></td>
+            <td>
+              <label id="label4">Выберите оценку:</label>
+              <button id="chooseFive4" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour4" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree4" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo4" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade4" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade4" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade4" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade4" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel4" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>5</td>
+            <td><a href="profile.html" class="student">Иванов Михаил Артёмович</a></td>
+            <td>
+              <label id="label5">Выберите оценку:</label>
+              <button id="chooseFive5" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour5" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree5" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo5" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade5" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade5" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade5" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade5" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel5" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>6</td>
+            <td><a href="profile.html" class="student">Борисова Ксения Владиславовна</a></td>
+            <td>
+              <label id="label6">Выберите оценку:</label>
+              <button id="chooseFive6" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour6" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree6" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo6" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade6" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade6" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade6" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade6" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel6" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>7</td>
+            <td><a href="profile.html" class="student">Сергеева Вероника Артёмовна</a></td>
+            <td>
+              <label id="label7">Выберите оценку:</label>
+              <button id="chooseFive7" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour7" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree7" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo7" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade7" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade7" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade7" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade7" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel7" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>8</td>
+            <td><a href="profile.html" class="student">Котов Георгий Юрьевич</a></td>
+            <td>
+              <label id="label8">Выберите оценку:</label>
+              <button id="chooseFive8" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour8" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree8" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo8" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade8" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade8" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade8" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade8" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel8" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>9</td>
+            <td><a href="profile.html" class="student">Дмитриев Владимир Романович</a></td>
+            <td>
+              <label id="label9">Выберите оценку:</label>
+              <button id="chooseFive9" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour9" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree9" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo9" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade9" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade9" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade9" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade9" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel9" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+
+          <tr class="tableMainRow">
+            <td>10</td>
+            <td><a href="profile.html" class="student">Ушаков Никита Васильевич</a></td>
+            <td>
+              <label id="label10">Выберите оценку:</label>
+              <button id="chooseFive10" class="chooseFive" type="submit">5</button>
+              <button id="chooseFour10" class="chooseFour" type="submit">4</button>
+              <button id="chooseThree10" class="chooseThree" type="submit">3</button>
+              <button id="chooseTwo10" class="chooseTwo" type="submit">2</button>
+
+              <div class="gradeGrid">
+                <div id="fiveGrade10" class="fiveGrade turnedOff">5</div>
+                <div id="fourGrade10" class="fourGrade turnedOff">4</div>
+                <div id="threeGrade10" class="threeGrade turnedOff">3</div>
+                <div id="twoGrade10" class="twoGrade turnedOff">2</div>
+
+                <div id="cancel10" class="cancelGrade turnedOff">➦</div>
+              </div>
+            </td>
+            <td><input type="file"></td>
+          </tr>
+        </tbody>
+      </table>
+      <a href="#" class="toBoard">Доска</a>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>

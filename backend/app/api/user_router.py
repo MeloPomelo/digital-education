@@ -15,7 +15,7 @@ from app.crud import user_crud as crud
 ACCESS_TOKEN_EXPIRE_MINUTES = settings.ACCESS_TOKEN_EXPIRE_MINUTES
 
 user_router = APIRouter(
-    prefix='',
+    prefix='/users',
     tags=['users'],
 )
 
@@ -51,3 +51,16 @@ async def login_for_access_token(db: Session = Depends(get_db), form_data: OAuth
 @user_router.get("/me", response_model=user_schemas.User)
 async def read_users_me(current_user: User = Depends(crud.get_current_user)):
     return current_user
+
+
+@user_router.put("/update", response_model=user_schemas.User)
+def update_user(new_user_data: user_schemas.UserUpdate, current_user: User = Depends(crud.get_current_user), db: Session = Depends(get_db)):
+    return crud.update_user(new_user_data=new_user_data, current_user=current_user, db=db)
+
+
+# @user_router.put("/{username}", response_model=user_schemas.User)
+# def update_user(username: str, user: user_schemas.UserUpdate, db: Session = Depends(get_db)):
+#     db_user = crud.get_user(db, username=username)
+#     if db_user is None:
+#         raise HTTPException(status_code=404, detail="User not found")
+#     return crud.update_user(db, username, user=user)
