@@ -26,24 +26,24 @@ class SpacesPage extends React.Component {
         // }
         this.state = {
             spaces: [
-                {
-                  "title": "string",
-                  "description": "string",
-                  "id": 1,
-                  "modules": [],
-                  "users": [
-                    {
-                      "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
-                    }
-                  ]
-                }
+                // {
+                //   "title": "string",
+                //   "description": "string",
+                //   "id": 1,
+                //   "modules": [],
+                //   "users": [
+                //     {
+                //       "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
+                //     }
+                //   ]
+                // }
             ]
         }
         this.addSpace = this.addSpace.bind(this)
     }
     
     addSpace(space) {
-        // /** const newSpace =*/axios.post('http://localhost:8000/space/', space, config).then((response) => this.setState({spaces: response.data}))
+        /** const newSpace =*/axios.post('http://localhost:8000/space/', space, config).then((response) => this.setState({spaces: response.data}))
         // this.setState({spaces: newSpace})
         // const user = axios.get('http://localhost:8000/users/me', config).then((response) => response.data)
         // console.log(newSpace)
