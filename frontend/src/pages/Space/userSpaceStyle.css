@@ -172,8 +172,7 @@ aside {
 }
 
 .module-title {
-  position: relative;
-  right: 560px;
+  align-self: center;
   margin-bottom: 40px;
 }
 

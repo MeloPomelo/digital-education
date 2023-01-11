@@ -107,7 +107,7 @@ body {
   background-color: var(--basic-open-button);
   transition: 0.5s;
   padding: 10px 20px 10px 20px;
-  width: 100px;
+  width: 150px;
   text-align: center;
   display: block;
   margin: 0 auto;
@@ -129,6 +129,29 @@ body {
 
 .open-button:active {
   background-color: var(--basic-open-active);
+}
+
+.edit-delete-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-delete-button {
+  background: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.edit-delete-button:hover,
+.edit-delete-button:focus {
+  opacity: 0.7;
+}
+
+.edit-delete-button:active {
+  opacity: 0.5;
 }
 
 /*Форма добавления элементов */
