@@ -10,11 +10,26 @@ body {
 
 .main-header {
     display: grid;
-    grid-template-columns: 1fr 50px;
+    grid-template-columns: 1fr 50px 50px;
+    column-gap: 20px;
     background-color: #fff;
     padding-top: 20px;
     margin-bottom: 60px;
     padding: 20px;
+}
+
+.home-icon {
+    cursor: pointer;
+    transition: 0.4s;
+}
+
+.home-icon:hover,
+.home-icon:focus {
+    opacity: 0.5;
+}
+
+.home-icon:active {
+    opacity: 0.3;
 }
 
 .main-profile {
