@@ -26,27 +26,10 @@ class SpacePage extends React.Component {
         })
 
         this.state = {
-            modules: [
-                {
-                  title: "string",
-                  id: 1,
-                  space_id: 1,
-                  text_blocks: [
-                    {
-                      title: "string",
-                      description: "string",
-                      id: 1,
-                      module_id: 1
-                    }
-                  ],
-                  video_blocks: [],
-                  tests: []
-                },
-            ]
+            modules: []
         }
 
         this.addModule = this.addModule.bind(this)
-        this.addMaterial = this.addMaterial.bind(this)
     }
 
     addModule(module) {
@@ -54,38 +37,6 @@ class SpacePage extends React.Component {
         .then((value) => {
             this.setState({modules: [...this.state.modules, {...value}] })
         })
-    }
-
-    addMaterial(material) {
-        if(material.mat_type == "Лекция") {
-            axios.post('http://localhost:8000/space/space_{space_id}/module/create_text_material?module_id=' + material.mat_module, 
-            {
-                title: material.mat_title,
-                description: material.mat_description,
-                text: material.mat_url,
-            }, config)
-            .then((value) => {
-                this.setState({text_blocks: [...this.state.modules.text_blocks, {...value}]})
-            })
-        }
-        else if(material.mat_type == "Видео") {
-            axios.post('http://localhost:8000/space/space_{space_id}/module/create_video?module_id=' + material.mat_module, 
-            {
-                title: material.mat_title,
-                description: material.mat_description,
-                url: material.mat_url,
-            }, config)
-            .then((value) => {
-                this.setState({video_blocks: [...this.state.modules.video_blocks, {...value}]})
-            })
-        }
-        else {
-            console.log({
-                title: material.mat_title,
-                description: material.mat_description,
-                text: material.mat_url,
-            })
-        }
     }
 
     render(){
