@@ -6,6 +6,7 @@ import axios from "axios"
 import AddSpace from "./AddSpace";
 import "./classesStyle.css"
 
+
 const token = sessionStorage.getItem('token')
 
 const config = {
