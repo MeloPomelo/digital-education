@@ -33,8 +33,8 @@ class Module extends React.Component {
                                 <div className="edit-delete-grid">
                                     <img src={comments_icon} width="50px" height="50px" id="module12-lectureButton"/>
                                     <div>
-                                    <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
-                                    <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
+                                        <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
+                                        <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
                                     </div>
                                 </div>
                                 <h3>Лекция</h3>
