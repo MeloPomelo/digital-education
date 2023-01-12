@@ -35,6 +35,11 @@ def read_spaces(skip: int = 0, limit: int = 100, db: Session = Depends(get_db)):
     return db.query(Space).offset(skip).limit(limit).all()
 
 
+@space_router.get("/space_{space_id}", response_model=SchemaSpace)
+def read_space_by_id(space_id: int, db: Session = Depends(get_db)):
+    return space_crud.get_space(db=db, space_id=space_id)
+
+
 @space_router.get("/get_user_spaces", response_model=list[SchemaSpace])
 async def read_user_spaces(db: Session = Depends(get_db), current_user: User = Depends(user_crud.get_current_user)):
     return db.query(Space).join(Space.users).filter(Space.users.property.mapper.c.user_id == current_user.id).all()
@@ -64,3 +69,5 @@ def add_user_to_space(association: SchemaAssociation, db: Session = Depends(get_
     db.commit()
     db.refresh(db_association)
     return db_association
+
+

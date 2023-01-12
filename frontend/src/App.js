@@ -14,9 +14,9 @@ function App() {
 
     //Закомментировать для запуска через npm 
 
-    // if(!token) {
-    //     return <AuthPage setToken={setToken} />
-    // }
+    if(!token) {
+        return <AuthPage setToken={setToken} />
+    }
     
     return ( 
         <BrowserRouter>

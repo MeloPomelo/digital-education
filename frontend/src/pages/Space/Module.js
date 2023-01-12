@@ -9,7 +9,7 @@ class Module extends React.Component {
     module = this.props.module
     render() {
         return (
-            <div class="space-grid">
+            <div class="space-grid">d
                 <div className="module12">
                     <h2 className="module-title" id="module12-start">{this.module.title}</h2>
                     <div className="elementButtons">
