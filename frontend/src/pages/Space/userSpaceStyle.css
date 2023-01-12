@@ -306,15 +306,37 @@ body {
 
 /*New module*/
 
-.new-module {
+.add-module-component {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border: 2px solid var(--basic-color);
   border-radius: 5px;
-  padding: 20px 20px 20px 20px;
+  padding: 0 20px;
+}
+
+.new-module {
   display: grid;
   grid-template-rows: 1fr auto;
+  padding: 20px 20px 20px 20px;
   transition: 0.5s;
-  margin-bottom: 20px;
   transition: 0.4s;
+}
+.new-component-flex {
+  display: flex;
+  justify-content: space-between;
+}
+.new-component-label {
+  margin-bottom: 20px;
+}
+
+.new-component-select {
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.new-module:first-child {
+  border-right: 2px solid var(--basic-color);
 }
 
 .new-module:hover {
