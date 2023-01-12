@@ -1,5 +1,7 @@
 import React from "react";
 import comments_icon from "../img/file.svg"
+import delete_icon from "../img/delete.svg";
+import edit_icon from "../img/edit-icon.svg";
 
 
 class TextMaterial extends React.Component {
@@ -8,7 +10,13 @@ class TextMaterial extends React.Component {
         return (
             <a href=" https://externat.foxford.ru/polezno-znat/wiki-algebra-metody-resheniya-sistem-linejnyh-uravnenij" className="block-link">
                 <div className="elementButton">
-                    <img src={comments_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                    <div className="edit-delete-grid">
+                        <img src={comments_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                        <div>
+                            <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
+                            <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
+                        </div>
+                    </div>
                     <h3>{this.textMarerial.title}</h3>
                     <p className="elementButtonDescription">{this.textMarerial.description}</p>
                 </div>

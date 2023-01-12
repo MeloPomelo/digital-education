@@ -390,3 +390,26 @@ aside {
 .block-link {
   text-decoration: none;
 }
+
+.edit-delete-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-delete-button {
+  background: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.edit-delete-button:hover,
+.edit-delete-button:focus {
+  opacity: 0.7;
+}
+
+.edit-delete-button:active {
+  opacity: 0.5;
+}
