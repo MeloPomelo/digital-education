@@ -15,45 +15,6 @@ body {
 
 /*Sidebar*/
 
-aside {
-  background-color: var(--basic-light-gray);
-  border-right: 1px solid var(--basic-color);
-}
-
-.close-sidebar {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 45px;
-  margin-left: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
-  transition: 0.5s;
-  border-radius: 50%;
-  padding-left: 11px;
-  padding-right: 11px;
-  background-color: var(--basic-color);
-  margin-top: 5px;
-}
-
-.close-sidebar:hover,
-.close-sidebar:active {
-  background-color: var(--basic-hover);
-}
-
-.main-sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  font-size: 18px;
-}
 
 .main-profile {
   display: flex;
@@ -125,11 +86,27 @@ aside {
 
 .main-header {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 50px 50px;
+  column-gap: 20px;
   margin-bottom: 60px;
 }
 
+.home-icon {
+  cursor: pointer;
+  transition: 0.4s;
+}
+
+.home-icon:hover,
+.home-icon:focus {
+  opacity: 0.5;
+}
+
+.home-icon:active {
+  opacity: 0.3;
+}
+
 .logout-button {
+  cursor: pointer;
   transition: 0.4s;
 }
 
@@ -306,7 +283,7 @@ aside {
 .elementButtons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 200px;
+  column-gap: 100px;
   margin-bottom: 40px;
 }
 
@@ -324,6 +301,7 @@ aside {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+
 
 .elementButton:hover {
   background-color: var(--basic-hover);
@@ -344,15 +322,38 @@ aside {
 
 /*New module*/
 
-.new-module {
+.add-module-component {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
   border: 2px solid var(--basic-color);
   border-radius: 5px;
-  padding: 20px 20px 20px 20px;
+  padding: 0 20px;
+}
+
+.new-module {
   display: grid;
   grid-template-rows: 1fr auto;
+  padding: 20px 20px 20px 20px;
   transition: 0.5s;
-  margin-bottom: 20px;
   transition: 0.4s;
+}
+.new-component-flex {
+  display: flex;
+  justify-content: space-between;
+}
+
+.new-component-label {
+  margin-bottom: 20px;
+}
+
+.new-component-select {
+  width: 200px;
+  height: 30px;
+  font-size: 18px;
+}
+
+.new-module:first-child {
+  border-right: 2px solid var(--basic-color);
 }
 
 .new-module:hover {
@@ -389,4 +390,27 @@ aside {
 
 .block-link {
   text-decoration: none;
+}
+
+.edit-delete-grid {
+  display: flex;
+  justify-content: space-between;
+}
+
+.edit-delete-button {
+  background: none;
+  border: none;
+  width: 25px;
+  height: 25px;
+  transition: 0.4s;
+  cursor: pointer;
+}
+
+.edit-delete-button:hover,
+.edit-delete-button:focus {
+  opacity: 0.7;
+}
+
+.edit-delete-button:active {
+  opacity: 0.5;
 }

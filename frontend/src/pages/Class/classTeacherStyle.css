@@ -19,7 +19,7 @@ body {
 
 .main-header {
   display: grid;
-  grid-template-columns: 1fr 50px;
+  grid-template-columns: 1fr 50px 50px;
   padding-top: 20px;
   margin-bottom: 60px;
 }

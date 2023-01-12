@@ -1,33 +1,59 @@
 import React from "react";
-import TextMaterial from "./blocks/TextMaterial";
-import VideoMaterial from "./blocks/VideoMaterial";
-import TestMaterial from "./blocks/TestMaterial";
-
+import video_icon from "./img/video.svg"
+import comments_icon from "./img/file.svg"
+import test_icon from "./img/search.svg"
+import delete_icon from "./img/delete.svg";
+import edit_icon from "./img/edit-icon.svg";
 
 class Module extends React.Component {
     module = this.props.module
     render() {
         return (
-            <div className="module12">
-                <h2 className="module-title" id="module12-start">{this.module.title}</h2>
-                <div className="elementButtons">
+            <div class="space-grid">d
+                <div className="module12">
+                    <h2 className="module-title" id="module12-start">{this.module.title}</h2>
+                    <div className="elementButtons">
+                        
+                        <a href="https://youtu.be/kk938eKvmDA" className="block-link">
+                            <div className="elementButton">
+                                <div className="edit-delete-grid">
+                                    <img src={video_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                                    <div>
+                                    <button className="edit-delete-button"><img src={edit_icon} width="27px" height="27px" alt="Изменить компонент"/></button>
+                                    <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="27px" height="27px" alt="Удалить компонент"/></button>
+                                    </div>
+                                </div>
+                                <h3>Видео</h3>
+                                <p className="elementButtonDescription">Метод Крамера за 3 минуты. Решение системы линейных уравнений</p>
+                            </div>
+                        </a>
                     
-                    {this.props.module.text_blocks.map((el) => (
-                        <TextMaterial key={el.id} textMarerial={el}/>
-                    ))}
-                    
-                    {this.props.module.video_blocks.map((el) => (
-                        <VideoMaterial key={el.id} videoMaterial={el}/>
-                    ))}     
+                        <a href=" https://externat.foxford.ru/polezno-znat/wiki-algebra-metody-resheniya-sistem-linejnyh-uravnenij" className="block-link">
+                            <div className="elementButton">
+                                <div className="edit-delete-grid">
+                                    <img src={comments_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                                    <div>
+                                        <button className="edit-delete-button"><img src={edit_icon} width="27px" height="27px" alt="Изменить компонент"/></button>
+                                        <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="27px" height="27px" alt="Удалить компонент"/></button>
+                                    </div>
+                                </div>
+                                <h3>Лекция</h3>
+                                <p className="elementButtonDescription">Разбираемся в решении линейных уравнениях</p>
+                            </div>
+                        </a>
+                        <div className="elementButton">
+                            <div className="edit-delete-grid">
+                                <img src={test_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                                <div>
+                                    <button className="edit-delete-button"><img src={edit_icon} width="27px" height="27px" alt="Изменить компонент"/></button>
+                                    <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="27px" height="27px" alt="Удалить компонент"/></button>
+                                </div>
+                            </div>
+                            <h3>Тестирование</h3>
+                            <p className="elementButtonDescription">10 вопрсов на 20 минут</p>
+                        </div>
 
-                    {this.props.module.tests.map((el) => (
-                        <TestMaterial key={el.id} testMaterial={el}/>
-                    ))}                
-                    
-                    {/* <TextMaterial />
-                    <VideoMaterial />
-                    <TestMaterial /> */}
-
+                    </div>
                 </div>
             </div>
         )
@@ -35,4 +61,3 @@ class Module extends React.Component {
 }
 
 export default Module
-

@@ -11,6 +11,9 @@ class SchemaTextMaterialCreate(BlockBase):
     text: str
 
 
+class SchemaTextMaterialUpdate(SchemaTextMaterialCreate):
+    pass
+
 class TextMaterial(BlockBase):
     id: int
     module_id: int
@@ -21,6 +24,10 @@ class TextMaterial(BlockBase):
 
 class SchemaVideoCreate(BlockBase):
     url: str
+
+
+class SchemaVideoUpdate(SchemaVideoCreate):
+    pass
 
 
 class Video(BlockBase):
