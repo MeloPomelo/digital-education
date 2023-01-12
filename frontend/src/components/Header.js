@@ -1,6 +1,7 @@
 import React from "react";
 import Profile from "./Profile";
 import logoutImg from "../img/logout.png"
+import homeIcon from "./img/home.svg"
 
 const logout = () => {
   sessionStorage.removeItem("token")
@@ -17,6 +18,9 @@ class Header extends React.Component {
     return (
         <header className="main-header">
             <Profile />
+            <a className="home-icon">
+              <img src={homeIcon} width="50px" height="50px"/>
+            </a>
             <a className="logout-button">
               <img width="50px" height="50px" onClick={logout} src={logoutImg} />
             </a>
