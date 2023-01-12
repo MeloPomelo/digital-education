@@ -15,45 +15,6 @@ body {
 
 /*Sidebar*/
 
-aside {
-  background-color: var(--basic-light-gray);
-  border-right: 1px solid var(--basic-color);
-}
-
-.close-sidebar {
-  position: absolute;
-  top: 0;
-  right: 25px;
-  font-size: 45px;
-  margin-left: 50px;
-  text-decoration: none;
-  font-weight: 600;
-  color: white;
-  transition: 0.5s;
-  border-radius: 50%;
-  padding-left: 11px;
-  padding-right: 11px;
-  background-color: var(--basic-color);
-  margin-top: 5px;
-}
-
-.close-sidebar:hover,
-.close-sidebar:active {
-  background-color: var(--basic-hover);
-}
-
-.main-sidebar {
-  height: 100%;
-  width: 0;
-  position: fixed;
-  z-index: 1;
-  top: 0;
-  left: 0;
-  overflow-x: hidden;
-  transition: 0.5s;
-  padding-top: 60px;
-  font-size: 18px;
-}
 
 .main-profile {
   display: flex;
@@ -306,7 +267,7 @@ aside {
 .elementButtons {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
-  column-gap: 200px;
+  column-gap: 100px;
   margin-bottom: 40px;
 }
 
@@ -324,6 +285,7 @@ aside {
   text-transform: uppercase;
   margin-bottom: 20px;
 }
+
 
 .elementButton:hover {
   background-color: var(--basic-hover);

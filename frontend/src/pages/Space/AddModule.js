@@ -14,6 +14,7 @@ class AddModule extends React.Component{
             <div className="new-module" id="new-module">
                 <h2>Добавить модуль</h2>
                 <input className="module-add-input" placeholder="Название модуля" onChange={(e) => this.setState({ title: e.target.value})}/>
+                <input className="module-add-input" placeholder="Описание модуля"/>
                 <button className="module-add-button" type="button"  onClick={() => this.props.onAdd({
                     title: this.state.title,
                 })}>Создать модуль</button>
