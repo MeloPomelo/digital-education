@@ -8,7 +8,7 @@ class Spaces extends React.Component {
             return (
                 <div>
                     {this.props.spaces.map((el) => (
-                        <Space key={el.id} space={el}/>
+                        <Space onDelete={this.props.onDelete} key={el.id} space={el}/>
                     ))}
                 </div> 
             )

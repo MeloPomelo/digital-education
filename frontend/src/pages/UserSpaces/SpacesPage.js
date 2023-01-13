@@ -34,6 +34,15 @@ class SpacesPage extends React.Component {
         
         this.addSpace = this.addSpace.bind(this)
         this.addUserToSpace = this.addUserToSpace.bind(this)
+        this.deleteSpace = this.deleteSpace.bind(this)
+    }
+
+    deleteSpace(space_id) {
+        this.setState({
+            spaces: this.state.spaces.filter((el) => el.id !== space_id)
+            } 
+        )
+        axios.delete('http://127.0.0.1:8000/space/space_' + space_id, config).then(response => console.log(response.data))
     }
     
     addSpace(space) {
@@ -57,7 +66,7 @@ class SpacesPage extends React.Component {
                 <Header />
                 <main>
                     <ul className="classes-list">
-                        <Spaces spaces={this.state.spaces}/>
+                        <Spaces spaces={this.state.spaces} onDelete={this.deleteSpace}/>
                     </ul>
                 </main>
                 <div>
