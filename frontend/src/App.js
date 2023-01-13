@@ -13,9 +13,16 @@ function App() {
 
     //Закомментировать для запуска через npm 
 
-    // if(!token) {
-    //     return <AuthPage setToken={setToken} />
-    // }
+    if(!token) {
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/login" element={<AuthPage setToken={setToken} />} />
+                    <Route path="*" element={<AuthPage setToken={setToken}/>} />
+                </Routes>
+            </BrowserRouter>
+        )
+    }
     
     return ( 
         <BrowserRouter>
@@ -25,6 +32,7 @@ function App() {
                 <Route path="/space" element={<SpacePage />} />
                 <Route path="/login" element={<AuthPage setToken={setToken}/>} />
                 <Route path="/classTeacher" element={<ClassTeacher />} />
+                <Route path="*" element={<SpacesPage />} />
             </Routes>
         </BrowserRouter>
     )
