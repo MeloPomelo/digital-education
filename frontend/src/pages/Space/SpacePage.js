@@ -30,6 +30,7 @@ class SpacePage extends React.Component {
         }
 
         this.addModule = this.addModule.bind(this)
+        this.deleteModule = this.deleteModule.bind(this)
     }
 
     addModule(module) {
@@ -39,11 +40,19 @@ class SpacePage extends React.Component {
         })
     }
 
+    deleteModule(module_id) {
+        this.setState({
+            modules: this.state.modules.filter((el) => el.id !== module_id)
+            } 
+        )
+        axios.delete('http://localhost:8000/space/modules/module_' + module_id, config)
+    }
+
     render(){
         return (
             <div>
                 <Header />
-                <Modules modules={this.state.modules}/>
+                <Modules modules={this.state.modules} onDelete={this.deleteModule}/>
                 <AddModule modules={this.state.modules} onAdd={this.addModule} onAdd2={this.addMaterial}/>
             </div>
         )

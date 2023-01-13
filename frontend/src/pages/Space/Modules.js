@@ -6,7 +6,7 @@ class Modules extends React.Component {
         return (
             <div>
                 {this.props.modules.map((el) => (
-                    <Module key={el.id} module={el}/>
+                    <Module key={el.id} module={el} onDelete={this.props.onDelete}/>
                 ))}
             </div>
         )
