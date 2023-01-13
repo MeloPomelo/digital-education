@@ -16,29 +16,41 @@ const config = {
 
 
 class Module extends React.Component {
-    module = this.props.module
+    constructor (props) {
+        super(props)
+        this.state = {
+            module_id: this.props.module.id,
+            module_title: this.props.module.title,
+            text_blocks: this.props.module.text_blocks,
+            video_blocks: this.props.module.video_blocks,
+            tests: this.props.module.tests,
+        }
+
+        this.addMaterial = this.addMaterial.bind(this)
+    }
 
     addMaterial(material) {
         if(material.mat_type == "Лекция") {
-            axios.post('http://localhost:8000/space/space_{space_id}/module/create_text_material?module_id=' + this.props.module.id, 
+            console.log(this.state.module_id)
+            axios.post('http://localhost:8000/space/space_{space_id}/module/create_text_material?module_id=' + String(this.state.module_id), 
             {
                 title: material.mat_title,
                 description: material.mat_description,
                 text: material.mat_url,
             }, config)
             .then((value) => {
-                this.setState({text_blocks: [...this.props.module.text_blocks, {...value}]})
+                this.setState({text_blocks: [...this.state.text_blocks, {...value.data}]})
             })
         }
         else if(material.mat_type == "Видео") {
-            axios.post('http://localhost:8000/space/space_{space_id}/module/create_video?module_id=' + this.props.module.id, 
+            axios.post('http://localhost:8000/space/space_{space_id}/module/create_video?module_id=' + String(this.state.module_id), 
             {
                 title: material.mat_title,
                 description: material.mat_description,
                 url: material.mat_url,
             }, config)
             .then((value) => {
-                this.setState({video_blocks: [...this.props.module.video_blocks, {...value}]})
+                this.setState({video_blocks: [...this.state.video_blocks, {...value.data}]})
             })
         }
         else {
@@ -47,6 +59,8 @@ class Module extends React.Component {
                 description: material.mat_description,
                 text: material.mat_url,
             })
+
+            this.setState({video_blocks: [...this.state.video_blocks, {...value.data}]})
         }
     }
 
@@ -54,16 +68,16 @@ class Module extends React.Component {
         return (
             <div class="space-grid">
                 <div className="module12">
-                    <h2 className="module-title" id="module12-start">{this.module.title}</h2>
+                    <h2 className="module-title" id="module12-start">{this.state.module_title}</h2>
                     <div className="elementButtons">
-                        {this.props.module.text_blocks.map((el) => (
+                        {this.state.text_blocks.map((el) => (
                             <TextMaterial key={el.id} textMarerial={el}/>
                         ))}
-                        {this.props.module.video_blocks.map((el) => (
+                        {this.state.video_blocks.map((el) => (
                             <VideoMaterial key={el.id} videoMaterial={el}/>
                         ))}     
 
-                        {this.props.module.tests.map((el) => (
+                        {this.state.tests.map((el) => (
                             <TestMaterial key={el.id} testMaterial={el}/>
                         ))} 
                     </div>
