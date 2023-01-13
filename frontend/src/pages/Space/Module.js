@@ -75,8 +75,7 @@ class Module extends React.Component {
                         ))}
                         {this.state.video_blocks.map((el) => (
                             <VideoMaterial key={el.id} videoMaterial={el}/>
-                        ))}     
-
+                        ))}    
                         {this.state.tests.map((el) => (
                             <TestMaterial key={el.id} testMaterial={el}/>
                         ))} 

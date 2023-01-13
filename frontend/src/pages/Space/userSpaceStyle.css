@@ -323,8 +323,8 @@ body {
 /*New module*/
 
 .add-module-component {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
+  display: flex;
+  flex-direction: column;
   border: 2px solid var(--basic-color);
   border-radius: 5px;
   padding: 0 20px;
@@ -337,6 +337,7 @@ body {
   transition: 0.5s;
   transition: 0.4s;
 }
+
 .new-component-flex {
   display: flex;
   justify-content: space-between;
@@ -352,9 +353,6 @@ body {
   font-size: 18px;
 }
 
-.new-module:first-child {
-  border-right: 2px solid var(--basic-color);
-}
 
 .new-module:hover {
   border-color: var(--basic-hover);

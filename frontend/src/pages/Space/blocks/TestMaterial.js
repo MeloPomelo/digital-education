@@ -12,8 +12,8 @@ class TestMaterial extends React.Component {
                 <div className="edit-delete-grid">
                     <img src={test_icon} width="50px" height="50px" id="module12-lectureButton"/>
                     <div>
-                        <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
-                        <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
+                        <button className="edit-delete-button"><img src={edit_icon} width="27px" height="27px" alt="Изменить компонент"/></button>
+                        <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="27px" height="27px" alt="Удалить компонент"/></button>
                     </div>
                 </div>
                 <h3>{this.testMaterial.title}</h3>
