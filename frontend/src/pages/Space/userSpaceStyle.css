@@ -328,6 +328,7 @@ body {
   border: 2px solid var(--basic-color);
   border-radius: 5px;
   padding: 0 20px;
+  margin-bottom: 20px;
 }
 
 .new-module {
@@ -411,4 +412,9 @@ body {
 
 .edit-delete-button:active {
   opacity: 0.5;
+}
+
+.components-flex {
+  display: flex;
+  justify-content: space-around;
 }

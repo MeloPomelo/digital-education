@@ -59,8 +59,6 @@ class Module extends React.Component {
                 description: material.mat_description,
                 text: material.mat_url,
             })
-
-            this.setState({video_blocks: [...this.state.video_blocks, {...value.data}]})
         }
     }
 

@@ -34,7 +34,6 @@ class AddModule extends React.Component{
     render() {
         return (
             <div className="add-module-component" id="new-module">
-                
                 <div className="new-module">
                     <h2>Добавить модуль</h2>
                     <input className="module-add-input" placeholder="Название модуля" onChange={(e) => this.setState({ module_title
