@@ -26,17 +26,28 @@ class SpacesPage extends React.Component {
         // }
         this.state = {
             spaces: [
-                // {
-                //   "title": "string",
-                //   "description": "string",
-                //   "id": 1,
-                //   "modules": [],
-                //   "users": [
-                //     {
-                //       "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
-                //     }
-                //   ]
-                // }
+                {
+                  "title": "string",
+                  "description": "aewdjiuoawbdiuesfbheawudlwabduoafwlfjeabwudofwqfdbwaofawbdawuodfvwaiuofbvefuoegsbgeos8efu9wadnnil awfwak cfbwalkjfa fkjwaf waawkjdaw kjcfaewhiv sahjigeshg ioasbucudioawdfwabuidfawbgdwi7audvy7uad",
+                  "id": 1,
+                  "modules": [],
+                  "users": [
+                    {
+                      "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
+                    }
+                  ]
+                },
+                {
+                    "title": "string",
+                    "description": "efscn kjlzdscb kjb kkubjk hjhubkiudbbiudccvasyufcvseifyusfabgeisva asvaegsvyrbeagra7ebsgras7egviar87tasef7aes6fietafoaetvfiae67fewatfuatfae87ofete78sfitef7awift67aew",
+                    "id": 1,
+                    "modules": [],
+                    "users": [
+                      {
+                        "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
+                      }
+                    ]
+                  }
             ]
         }
         this.addSpace = this.addSpace.bind(this)

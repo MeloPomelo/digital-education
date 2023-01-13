@@ -26,14 +26,14 @@ class SpacePage extends React.Component {
 
         this.state = {
             modules: [
-                // {
-                //   title: "Системы линейных уравнений",
-                //   id: 1,
-                //   space_id: 1,
-                //   text_blocks: [],
-                //   video_blocks: [],
-                //   tests: []
-                // }
+                {
+                  title: "Системы линейных уравнений",
+                  id: 1,
+                  space_id: 1,
+                  text_blocks: [],
+                  video_blocks: [],
+                  tests: []
+                }              
             ]
         }
 

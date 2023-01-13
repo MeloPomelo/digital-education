@@ -89,7 +89,6 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  column-gap: 100px;
 }
 
 .classes-list-item {
