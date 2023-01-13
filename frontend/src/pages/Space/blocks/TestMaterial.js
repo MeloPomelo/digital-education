@@ -9,11 +9,13 @@ class TestMaterial extends React.Component {
     render() {
         return (
             <div className="elementButton">
-                <div>
-                    <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
-                    <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
+                <div className="edit-delete-grid">
+                    <img src={test_icon} width="50px" height="50px" id="module12-lectureButton"/>
+                    <div>
+                        <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
+                        <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
+                    </div>
                 </div>
-                <img src={test_icon} width="50px" height="50px" id="module12-lectureButton"/>
                 <h3>{this.testMaterial.title}</h3>
                 <p className="elementButtonDescription">{this.testMaterial.description}</p>
             </div>

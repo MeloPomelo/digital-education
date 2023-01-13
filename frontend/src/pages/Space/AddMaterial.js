@@ -26,16 +26,14 @@ class AddMaterial extends React.Component{
         return (
             <div className="new-module">
                 <h2>Добавить компонент</h2>
-                <div className="new-component-flex">
-                    <label className="new-component-label">
-                        Тип Компонента<br/>
-                        <select className="new-component-select" onChange={this.onChangeType}>
-                            <option>Видео</option>
-                            <option>Лекция</option>
-                            <option>Тестирование</option>
-                        </select>
-                    </label>
-                </div>
+                <label className="new-component-label">
+                    Тип Компонента<br/>
+                    <select className="new-component-select" onChange={this.onChangeType}>
+                        <option>Видео</option>
+                        <option>Лекция</option>
+                        <option>Тестирование</option>
+                    </select>
+                </label>
 
                 <input className="module-add-input" placeholder="Название компонента" onChange={(e) => this.setState({ mat_title: e.target.value})}/>
                 <input className="module-add-input" placeholder="Описание компонента" onChange={(e) => this.setState({ mat_description: e.target.value})}/>
