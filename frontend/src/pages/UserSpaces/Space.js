@@ -31,7 +31,7 @@ class Space extends React.Component {
                         <h2>{this.state.space.title}</h2>
                         <div>
                             <button className="edit-delete-button"><img src={edit_icon} width="25px" height="25px"/></button>
-                            <button className="edit-delete-button"><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
+                            <button className="edit-delete-button" onClick={() => this.props.onDelete(this.state.space.id)}><img className="edit-delete-button" src={delete_icon} width="25px" height="25px"/></button>
                         </div>
                     </div>
                     <p className="subject-description">{this.state.space.description}</p>
