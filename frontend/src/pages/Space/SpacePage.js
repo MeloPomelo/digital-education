@@ -4,6 +4,7 @@ import Header from "../../components/Header";
 import AddModule from "./AddModule";
 import axios from "axios"
 import "./userSpaceStyle.css"
+import { json } from "react-router-dom";
 
 
 const token = sessionStorage.getItem('token')
@@ -25,25 +26,17 @@ class SpacePage extends React.Component {
         })
 
         this.state = {
-            modules: [
-                {
-                  title: "Системы линейных уравнений",
-                  id: 1,
-                  space_id: 1,
-                  text_blocks: [],
-                  video_blocks: [],
-                  tests: []
-                }              
-            ]
+            modules: []
         }
 
-        this.addSpace = this.addModule.bind(this)
+        this.addModule = this.addModule.bind(this)
     }
 
     addModule(module) {
-        console.log(module)
-        const id = this.state.modules.length + 1
-        this.setState({ space: [...this.state.modules, {id, ...module}] })
+        axios.post('http://localhost:8000/space/space_' + space_id + '/module/', module, config).then((response) => response.data)
+        .then((value) => {
+            this.setState({modules: [...this.state.modules, {...value}] })
+        })
     }
 
     render(){
@@ -51,7 +44,7 @@ class SpacePage extends React.Component {
             <div>
                 <Header />
                 <Modules modules={this.state.modules}/>
-                <AddModule onAdd={this.addModule}/>
+                <AddModule modules={this.state.modules} onAdd={this.addModule} onAdd2={this.addMaterial}/>
             </div>
         )
     }

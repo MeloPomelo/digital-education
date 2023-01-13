@@ -1,5 +1,7 @@
 import React from "react";
 import comments_icon from "../img/file.svg"
+import delete_icon from "../img/delete.svg";
+import edit_icon from "../img/edit-icon.svg";
 
 
 class TextMaterial extends React.Component {

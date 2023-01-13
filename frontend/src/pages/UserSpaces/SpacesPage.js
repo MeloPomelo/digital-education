@@ -1,9 +1,11 @@
 import React, { useState }from "react";
+import { withRouter } from "../../components/withRouter";
 import Header from "../../components/Header";
 import Spaces from "./Spaces";
 import axios from "axios"
 import AddSpace from "./AddSpace";
 import "./classesStyle.css"
+
 
 const token = sessionStorage.getItem('token')
 
@@ -21,48 +23,41 @@ class SpacesPage extends React.Component {
             this.setState({spaces: response.data})
         })
 
-        // this.state = {
-        //     spaces: []
-        // }
+        axios.get('http://localhost:8000/users/me', config).then((response) => {
+            this.setState({currentUserId: response.data.id})
+        })
+
         this.state = {
-            spaces: [
-                {
-                  "title": "string",
-                  "description": "aewdjiuoawbdiuesfbheawudlwabduoafwlfjeabwudofwqfdbwaofawbdawuodfvwaiuofbvefuoegsbgeos8efu9wadnnil awfwak cfbwalkjfa fkjwaf waawkjdaw kjcfaewhiv sahjigeshg ioasbucudioawdfwabuidfawbgdwi7audvy7uad",
-                  "id": 1,
-                  "modules": [],
-                  "users": [
-                    {
-                      "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
-                    }
-                  ]
-                },
-                {
-                    "title": "string",
-                    "description": "efscn kjlzdscb kjb kkubjk hjhubkiudbbiudccvasyufcvseifyusfabgeisva asvaegsvyrbeagra7ebsgras7egviar87tasef7aes6fietafoaetvfiae67fewatfuatfae87ofete78sfitef7awift67aew",
-                    "id": 1,
-                    "modules": [],
-                    "users": [
-                      {
-                        "user_id": "f1c81ae4-0f7a-49e7-bbc3-a0d2acf44fd3"
-                      }
-                    ]
-                  }
-            ]
+            spaces: [],
+            currentUserId: ""
         }
+        
         this.addSpace = this.addSpace.bind(this)
+        this.addUserToSpace = this.addUserToSpace.bind(this)
+        this.deleteSpace = this.deleteSpace.bind(this)
+    }
+
+    deleteSpace(space_id) {
+        this.setState({
+            spaces: this.state.spaces.filter((el) => el.id !== space_id)
+            } 
+        )
+        axios.delete('http://127.0.0.1:8000/space/space_' + space_id, config).then(response => console.log(response.data))
     }
     
     addSpace(space) {
-        /** const newSpace =*/axios.post('http://localhost:8000/space/', space, config).then((response) => this.setState({spaces: response.data}))
-        // this.setState({spaces: newSpace})
-        // const user = axios.get('http://localhost:8000/users/me', config).then((response) => response.data)
-        // console.log(newSpace)
-        // console.log(user)
-        // axios.post('http://localhost:8000/space/add_user', {
-        //     space_id: newSpace.id,
-        //     user_id: user.id
-        // }, config)
+        axios.post('http://localhost:8000/space/', space, config).then((response) => response.data)
+        .then((value) => {
+            this.setState({spaces: [...this.state.spaces, {...value}] })
+            this.addUserToSpace(value.id)
+        })
+    }
+
+    addUserToSpace(spaceId) {
+        axios.post('http://localhost:8000/space/add_user', {
+            "space_id": spaceId,
+            "user_id": this.state.currentUserId
+        }, config)
     }
     
     render () {
@@ -71,7 +66,7 @@ class SpacesPage extends React.Component {
                 <Header />
                 <main>
                     <ul className="classes-list">
-                        <Spaces spaces={this.state.spaces}/>
+                        <Spaces spaces={this.state.spaces} onDelete={this.deleteSpace}/>
                     </ul>
                 </main>
                 <div>
@@ -82,4 +77,4 @@ class SpacesPage extends React.Component {
     }
 }
 
-export default SpacesPage
+export default withRouter(SpacesPage)

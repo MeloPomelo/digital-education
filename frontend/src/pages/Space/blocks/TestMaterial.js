@@ -1,5 +1,7 @@
 import React from "react";
 import test_icon from "../img/search.svg"
+import delete_icon from "../img/delete.svg";
+import edit_icon from "../img/edit-icon.svg";
 
 
 class TestMaterial extends React.Component {

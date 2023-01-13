@@ -5,8 +5,7 @@ import SpacePage from "./pages/Space/SpacePage";
 import AuthPage from "./pages/Auth/AuthPage"
 import ProfilePage from "./pages/Profile/ProfilePage";
 import useToken from "./components/useToken";
-import ClassTeacher from "./pages/Class/class";
-
+import ClassTeacher from "./pages/Class/Class";
 
 
 function App() {
@@ -14,9 +13,16 @@ function App() {
 
     //Закомментировать для запуска через npm 
 
-    // if(!token) {
-    //     return <AuthPage setToken={setToken} />
-    // }
+    if(!token) {
+        return (
+            <BrowserRouter>
+                <Routes>
+                    <Route path="/login" element={<AuthPage setToken={setToken} />} />
+                    <Route path="*" element={<AuthPage setToken={setToken}/>} />
+                </Routes>
+            </BrowserRouter>
+        )
+    }
     
     return ( 
         <BrowserRouter>
@@ -24,8 +30,9 @@ function App() {
                 <Route path="/userspaces" element={<SpacesPage />} />
                 <Route path="/profile" element={<ProfilePage />} />
                 <Route path="/space" element={<SpacePage />} />
-                <Route path="/login" element={<AuthPage />} />
+                <Route path="/login" element={<AuthPage setToken={setToken}/>} />
                 <Route path="/classTeacher" element={<ClassTeacher />} />
+                <Route path="*" element={<SpacesPage />} />
             </Routes>
         </BrowserRouter>
     )

@@ -7,7 +7,7 @@ from app.domains.role import Role
 
 from .space_router import space_router
 
-from app.schemas.block_schema import SchemaTextMaterialCreate, SchemaVideoCreate
+from app.schemas.block_schema import SchemaTextMaterialCreate, SchemaTextMaterialUpdate, SchemaVideoCreate, SchemaVideoUpdate
 from app.schemas.block_schema import Video as SchemaVideo
 from app.schemas.block_schema import TextMaterial as SchemaTextMaterial
 
@@ -19,6 +19,11 @@ def create_module_text_materials(text_material: SchemaTextMaterialCreate, module
     db_text_material = block_crud.create_modules_text_materials(db, text_material=text_material,
                                                                 module_id=module_id)
     return db_text_material
+
+
+@space_router.put('/space_{space_id}/module/text_{text_material_id}', response_model=SchemaTextMaterial)
+def update_module_text_materials(new_text_material_data: SchemaTextMaterialCreate, text_material_id: int, db: Session = Depends(get_db)):
+    return block_crud.update_text_material(db=db, new_text_material_data=new_text_material_data, text_material_id=text_material_id)
 
 
 @space_router.delete('/space_{space_id}/module/text_{text_material_id}', response_model=dict)
@@ -37,6 +42,11 @@ def delete_text_material(text_material_id: int, db: Session = Depends(get_db)):
 def create_module_video_materials(video: SchemaVideoCreate, module_id: int, db: Session = Depends(get_db)):
     db_video = block_crud.create_modules_video(db, video=video, module_id=module_id)
     return db_video
+
+
+@space_router.put('/space_{sapce_id}/module/video_{video_material_id}', response_model=SchemaVideo)
+def update_video_material(new_video_material_data: SchemaVideoUpdate, video_material_id: int, db: Session = Depends(get_db)):
+    return block_crud.update_video_material(db=db, new_video_material_data=new_video_material_data, video_material_id=video_material_id)
 
 
 @space_router.delete('/space_{space_id}/module/video_{video_material_id}', response_model=dict)
